@@ -72,7 +72,3 @@ Dataset 2 is a 64-channel Breath Counting EEG dataset. Its BIDS-style recordings
 ## Requirements
 
 Re-executing the notebooks requires Python 3 and the original permitted datasets. The workflows use MNE, NumPy, pandas, SciPy, statsmodels, scikit-learn, matplotlib, seaborn, and PyTorch for the DeepMLP workflow. Kaggle-specific paths in the notebooks must be changed for local use.
-
-## Data stewardship
-
-Do not upload, redistribute, or reconstruct the removed source datasets without the relevant permissions, ethics approval, consent provisions, and data-use agreement.
