@@ -1,0 +1,970 @@
+Feature,Importance,Feature family
+T4_HjorthMobility,0.013319239668770261,Hjorth features
+T3_Theta_Rel,0.013229126522181417,Band-power features
+C3_Theta_Rel,0.013118395582396239,Band-power features
+O1_Theta_Rel,0.01259413891441288,Band-power features
+T4_Theta_Rel,0.012345552506705045,Band-power features
+Pz_Theta_Rel,0.012229961858379396,Band-power features
+T4_DifferentialEntropyStd,0.012008892141623241,Entropy and complexity
+P4_Theta_Rel,0.011774988404399429,Band-power features
+T6_Gamma_Rel,0.011470225457018817,Band-power features
+Fp2_Theta_Rel,0.011179995376357695,Band-power features
+O2_Theta_Rel,0.011178976334876588,Band-power features
+F7_Theta_Rel,0.011005347510222484,Band-power features
+T6_Theta_Rel,0.01093772084545203,Band-power features
+T4_SpectralEntropy,0.010803782506086074,Entropy and complexity
+C4_Theta_Rel,0.01078734319612414,Band-power features
+T4_Delta_Rel,0.01076300660224015,Band-power features
+T4_HjorthComplexity,0.01073977768416082,Hjorth features
+P3_Theta_Rel,0.010651287793848748,Band-power features
+F3_HjorthComplexity,0.010566861495797556,Hjorth features
+T5_Theta_Rel,0.01050851847389559,Band-power features
+C3_HjorthComplexity,0.010378954627978661,Hjorth features
+F4_Theta_Rel,0.010340207690068097,Band-power features
+F3_Delta_Rel,0.0103150672000423,Band-power features
+Pz_HjorthMobility,0.01025916964394161,Hjorth features
+F8_Theta_Rel,0.010099257209553545,Band-power features
+O1_HjorthComplexity,0.010059253267502483,Hjorth features
+T3_HjorthMobility,0.010049163493603474,Hjorth features
+Cz_Theta_Rel,0.00990408894200005,Band-power features
+Fz_Alpha_Rel,0.009826431162240839,Band-power features
+F3_Theta_Rel,0.00972100231484451,Band-power features
+F7_HjorthComplexity,0.009664115775630148,Hjorth features
+C3_Delta_Rel,0.009611276276414553,Band-power features
+Fp1_Theta_Rel,0.009579171879138667,Band-power features
+Fp1_Delta_Rel,0.009471250864615696,Band-power features
+O1_Delta_Rel,0.00941365136889207,Band-power features
+F7_Delta_Rel,0.009309387515821662,Band-power features
+F4_Delta_Rel,0.009299093232016413,Band-power features
+P3_HjorthComplexity,0.009187067564220278,Hjorth features
+Fz_Theta_Rel,0.009082539899021084,Band-power features
+Fz_Delta_Rel,0.009064948860163829,Band-power features
+T3_Beta_Rel,0.008924164987983407,Band-power features
+Cz_Delta_Rel,0.00878734822414754,Band-power features
+Pz_HjorthComplexity,0.008783348755802545,Hjorth features
+F7_HjorthMobility,0.008736221806440746,Hjorth features
+F3_HjorthMobility,0.008715847031688938,Hjorth features
+Cz_HjorthMobility,0.008668100713402854,Hjorth features
+Fz_HjorthComplexity,0.00859773856081589,Hjorth features
+T3_HjorthComplexity,0.008508276325900257,Hjorth features
+Fp2_HjorthComplexity,0.008160825324599833,Hjorth features
+T5_DominantFreq,0.008117997270575291,Spectral summary features
+P4_DominantFreq,0.008114825263279736,Spectral summary features
+T4_Beta_Rel,0.007916465953162772,Band-power features
+P4_Alpha_Mean,0.00785555471798798,Oscillatory-envelope dynamics
+T6_Alpha_Mean,0.007819789168412241,Oscillatory-envelope dynamics
+Fp2_HjorthMobility,0.00770568497658394,Hjorth features
+Fp2_Delta_Rel,0.007670867119207623,Band-power features
+O1_DominantFreq,0.007669539873242745,Spectral summary features
+O1_Alpha_Mean,0.007656219182769761,Oscillatory-envelope dynamics
+F8_Alpha_Rel,0.007634468831941056,Band-power features
+F3_Alpha_Rel,0.007603459332859779,Band-power features
+F8_Delta_Rel,0.007565539550132458,Band-power features
+Fp1_DominantFreq,0.007513622953149132,Spectral summary features
+F8_HjorthComplexity,0.007434363010134312,Hjorth features
+T3_DominantFreq,0.007253858660734957,Spectral summary features
+PLV_Alpha_Fp1_F3,0.0072428637920715615,Functional connectivity / synchrony
+F3_DominantFreq,0.007195140180959207,Spectral summary features
+F7_DominantFreq,0.007105194750964487,Spectral summary features
+Pz_Delta_Rel,0.007037403800289009,Band-power features
+P3_Delta_Rel,0.006983596840531192,Band-power features
+Fz_DominantFreq,0.006976969131474725,Spectral summary features
+T6_DominantFreq,0.006693954859601084,Spectral summary features
+Pz_Beta_Rel,0.006557886225587899,Band-power features
+T5_HjorthComplexity,0.006526146124877461,Hjorth features
+T3_DifferentialEntropyStd,0.006454546468287599,Entropy and complexity
+Cz_SpectralEntropy,0.0061642242020169945,Entropy and complexity
+C3_Alpha_Mean,0.006147964281764021,Oscillatory-envelope dynamics
+F8_HjorthMobility,0.006140621901958491,Hjorth features
+Cz_HjorthComplexity,0.006118174565416886,Hjorth features
+P3_DominantFreq,0.006023099722309891,Spectral summary features
+Fp2_Alpha_Mean,0.005978351586625701,Oscillatory-envelope dynamics
+O2_Alpha_Mean,0.005952227927729362,Oscillatory-envelope dynamics
+T3_Delta_Rel,0.005792700484455604,Band-power features
+F8_DifferentialEntropyStd,0.005791368899524082,Entropy and complexity
+P4_Alpha_Rel,0.005754333031117071,Band-power features
+Cz_DifferentialEntropyStd,0.005732178254560072,Entropy and complexity
+F4_HjorthComplexity,0.005686680610594807,Hjorth features
+F4_DominantFreq,0.005629387898048634,Spectral summary features
+T5_Delta_Rel,0.005566527120508213,Band-power features
+PLV_Alpha_Fp1_F8,0.0055539903698939765,Functional connectivity / synchrony
+C3_DominantFreq,0.005318134409472016,Spectral summary features
+PLV_Alpha_Fp1_Fz,0.0052621384481005545,Functional connectivity / synchrony
+PLV_Theta_T3_P4,0.004952746240025031,Functional connectivity / synchrony
+C4_HjorthMobility,0.004900694791656444,Hjorth features
+T6_SpectralEntropy,0.0045976948725977625,Entropy and complexity
+F8_DominantFreq,0.004530751162857664,Spectral summary features
+T3_SpectralEntropy,0.004311700909313862,Entropy and complexity
+PLV_Alpha_T3_C3,0.004280836827675017,Functional connectivity / synchrony
+C3_HjorthMobility,0.004232192906685526,Hjorth features
+F3_Beta_Rel,0.004176058290332687,Band-power features
+T6_Alpha_Rel,0.004148681971514049,Band-power features
+Fp2_DominantFreq,0.004076327504765217,Spectral summary features
+P3_HjorthMobility,0.004009640886619514,Hjorth features
+O2_Alpha_Rel,0.003918107512717259,Band-power features
+F7_SpectralEntropy,0.003874218734242793,Entropy and complexity
+Fp1_HjorthComplexity,0.0038227883468737803,Hjorth features
+C4_Delta_Rel,0.0037834445778296513,Band-power features
+PLV_Alpha_F3_Fz,0.003771225792261141,Functional connectivity / synchrony
+F8_SpectralEntropy,0.0037554229476375184,Entropy and complexity
+PLV_Alpha_F3_F4,0.003685492515992622,Functional connectivity / synchrony
+Fz_Alpha_Mean,0.003669567815120953,Oscillatory-envelope dynamics
+PLV_Alpha_F7_F3,0.0035978839584513587,Functional connectivity / synchrony
+PLV_Alpha_Fp2_F3,0.0035464560007302673,Functional connectivity / synchrony
+Fp1_Alpha_Rel,0.0035285214599657206,Band-power features
+PLV_Alpha_F3_F8,0.003432721587566494,Functional connectivity / synchrony
+T4_DominantFreq,0.003376253218591674,Spectral summary features
+Cz_RMS,0.00301177557058767,Time-domain statistics
+Fp2_Gamma_Abs,0.0029260112146238075,Band-power features
+T6_HjorthMobility,0.002871109451572223,Hjorth features
+Cz_Peak2Peak,0.0028654176787721434,Time-domain statistics
+Fp2_Peak2Peak,0.002842814266153899,Time-domain statistics
+Fp2_Beta_Abs,0.0027451638182914287,Band-power features
+O2_SpectralEntropy,0.002527237938315658,Entropy and complexity
+O2_Gamma_Rel,0.0024830535020830234,Band-power features
+Fp2_RMS,0.0024383120394398036,Time-domain statistics
+Fp2_TotalPower,0.0024089874505601044,Spectral summary features
+Fp1_HjorthMobility,0.0023613218014320297,Hjorth features
+O1_Theta_Abs,0.002326964747196332,Band-power features
+PLV_Theta_Fp2_F8,0.0022381508266057547,Functional connectivity / synchrony
+Pz_Theta_Abs,0.0021826909462890664,Band-power features
+F4_Beta_Rel,0.0021685141475236954,Band-power features
+F7_Gamma_Rel,0.0021546203444716473,Band-power features
+PLV_Alpha_F7_F8,0.0021442142994768402,Functional connectivity / synchrony
+Cz_Theta_Mean,0.002112121388680182,Oscillatory-envelope dynamics
+C4_Alpha_Mean,0.0020924446244190986,Oscillatory-envelope dynamics
+P3_Beta_Rel,0.002079109785823953,Band-power features
+F4_HjorthMobility,0.0020591403416832755,Hjorth features
+C4_HjorthComplexity,0.0020535342192067375,Hjorth features
+Cz_Theta_Abs,0.0020433122481347396,Band-power features
+PLV_Alpha_F3_T5,0.002035146899225095,Functional connectivity / synchrony
+Cz_Delta_Abs,0.002013258672572949,Band-power features
+F4_DifferentialEntropyStd,0.001978128811176423,Entropy and complexity
+F7_Beta_Rel,0.0019566211259382346,Band-power features
+O1_Delta_Abs,0.0019531551675810496,Band-power features
+C4_Beta_Rel,0.0019477317776505822,Band-power features
+F3_SpectralEntropy,0.0019461047276902246,Entropy and complexity
+O1_Alpha_Rel,0.0019336341950862532,Band-power features
+T4_Alpha_Mean,0.0019213421256055764,Oscillatory-envelope dynamics
+PLV_Alpha_P4_O2,0.0019042182942775726,Functional connectivity / synchrony
+T6_Delta_Rel,0.0018981603468880657,Band-power features
+T5_Alpha_Mean,0.0018884233086625657,Oscillatory-envelope dynamics
+Fz_HjorthMobility,0.0018701114539562027,Hjorth features
+C3_Alpha_Abs,0.001869293577999341,Band-power features
+PLV_Alpha_Fp1_F7,0.001866565395829116,Functional connectivity / synchrony
+F4_Theta_Abs,0.0018551757145535137,Band-power features
+P3_Alpha_Mean,0.0018544382237235518,Oscillatory-envelope dynamics
+PLV_Alpha_F7_T6,0.001842037075011215,Functional connectivity / synchrony
+P4_Delta_Rel,0.001840900992885828,Band-power features
+F3_Delta_Abs,0.0018086828777160572,Band-power features
+P4_HjorthComplexity,0.001806816328517463,Hjorth features
+F4_Delta_Abs,0.001806316875406991,Band-power features
+Fp2_Alpha_Rel,0.0018052440172281058,Band-power features
+C3_Alpha_Var,0.0018025942893982398,Oscillatory-envelope dynamics
+F7_Alpha_Rel,0.001798613982610537,Band-power features
+PLV_Alpha_Fp1_Fp2,0.0017914507341073478,Functional connectivity / synchrony
+P4_Alpha_Var,0.001749684785605827,Oscillatory-envelope dynamics
+PLV_Alpha_F7_Fz,0.0017368724117975652,Functional connectivity / synchrony
+Cz_Theta_Var,0.0017293685608464674,Oscillatory-envelope dynamics
+C4_DominantFreq,0.0016816296779853545,Spectral summary features
+Fz_Delta_Abs,0.0016770822703856946,Band-power features
+Fp1_Envelope_Sync,0.0016606123867175433,Functional connectivity / synchrony
+O2_DominantFreq,0.0015226492852522732,Spectral summary features
+Pz_DominantFreq,0.0014843090003891055,Spectral summary features
+PLV_Alpha_Fz_F4,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fz_F8,0.0,Functional connectivity / synchrony
+PLV_Alpha_F8_T5,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fz_Cz,0.0,Functional connectivity / synchrony
+PLV_Alpha_F8_T4,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fz_T3,0.0,Functional connectivity / synchrony
+PLV_Alpha_F3_O2,0.0,Functional connectivity / synchrony
+T6_TotalPower,0.0,Spectral summary features
+PLV_Alpha_Fz_C3,0.0,Functional connectivity / synchrony
+T6_DifferentialEntropyStd,0.0,Entropy and complexity
+PLV_Alpha_F3_T4,0.0,Functional connectivity / synchrony
+PLV_Alpha_F8_O2,0.0,Functional connectivity / synchrony
+T6_Skewness,0.0,Time-domain statistics
+O1_Alpha_Bursts,0.0,Oscillatory-envelope dynamics
+PLV_Alpha_F8_O1,0.0,Functional connectivity / synchrony
+T6_HjorthComplexity,0.0,Hjorth features
+T6_ShannonEntropy,0.0,Entropy and complexity
+PLV_Alpha_F3_P3,0.0,Functional connectivity / synchrony
+O1_Alpha_Var,0.0,Oscillatory-envelope dynamics
+PLV_Alpha_F8_P4,0.0,Functional connectivity / synchrony
+O1_Alpha_CV,0.0,Oscillatory-envelope dynamics
+PLV_Alpha_F3_Pz,0.0,Functional connectivity / synchrony
+PLV_Alpha_F8_Pz,0.0,Functional connectivity / synchrony
+PLV_Alpha_F8_P3,0.0,Functional connectivity / synchrony
+PLV_Alpha_F3_P4,0.0,Functional connectivity / synchrony
+PLV_Alpha_F3_T6,0.0,Functional connectivity / synchrony
+PLV_Alpha_F3_O1,0.0,Functional connectivity / synchrony
+PLV_Alpha_F8_T6,0.0,Functional connectivity / synchrony
+PLV_Alpha_F4_C3,0.0,Functional connectivity / synchrony
+PLV_Alpha_F4_T3,0.0,Functional connectivity / synchrony
+PLV_Alpha_F4_Cz,0.0,Functional connectivity / synchrony
+PLV_Alpha_F4_C4,0.0,Functional connectivity / synchrony
+PLV_Alpha_F4_T4,0.0,Functional connectivity / synchrony
+PLV_Alpha_F4_T5,0.0,Functional connectivity / synchrony
+O1_Alpha_Abs,0.0,Band-power features
+PLV_Alpha_F4_F8,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fz_O2,0.0,Functional connectivity / synchrony
+PLV_Alpha_F4_P3,0.0,Functional connectivity / synchrony
+PLV_Alpha_F4_Pz,0.0,Functional connectivity / synchrony
+PLV_Alpha_F4_P4,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fz_O1,0.0,Functional connectivity / synchrony
+PLV_Alpha_F4_T6,0.0,Functional connectivity / synchrony
+PLV_Alpha_F4_O1,0.0,Functional connectivity / synchrony
+O1_Theta_Mean,0.0,Oscillatory-envelope dynamics
+O1_Beta_Abs,0.0,Band-power features
+PLV_Alpha_Fz_P4,0.0,Functional connectivity / synchrony
+O1_Beta_Rel,0.0,Band-power features
+PLV_Alpha_Fz_Pz,0.0,Functional connectivity / synchrony
+PLV_Alpha_F4_O2,0.0,Functional connectivity / synchrony
+O1_Gamma_Abs,0.0,Band-power features
+O1_Gamma_Rel,0.0,Band-power features
+PLV_Alpha_F8_T3,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fz_P3,0.0,Functional connectivity / synchrony
+PLV_Alpha_F8_C3,0.0,Functional connectivity / synchrony
+PLV_Alpha_F8_Cz,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fz_T5,0.0,Functional connectivity / synchrony
+PLV_Alpha_F8_C4,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fz_T4,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fz_C4,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fz_T6,0.0,Functional connectivity / synchrony
+O2_DifferentialEntropyStd,0.0,Entropy and complexity
+O2_TotalPower,0.0,Spectral summary features
+O2_Theta_Abs,0.0,Band-power features
+O2_Delta_Rel,0.0,Band-power features
+O2_Delta_Abs,0.0,Band-power features
+O1_TotalPower,0.0,Spectral summary features
+PLV_Alpha_Fp1_F4,0.0,Functional connectivity / synchrony
+O1_DifferentialEntropyStd,0.0,Entropy and complexity
+PLV_Alpha_Fp1_T3,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fp1_C3,0.0,Functional connectivity / synchrony
+PLV_Alpha_F7_P3,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fp1_C4,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fp1_T4,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fp1_T5,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fp1_P3,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fp1_Pz,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fp1_P4,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fp1_T6,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fp1_O1,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fp1_O2,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fp2_F7,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fp1_Cz,0.0,Functional connectivity / synchrony
+O2_Alpha_CV,0.0,Oscillatory-envelope dynamics
+O2_Alpha_Bursts,0.0,Oscillatory-envelope dynamics
+O2_Alpha_Var,0.0,Oscillatory-envelope dynamics
+O2_Theta_Mean,0.0,Oscillatory-envelope dynamics
+O2_Theta_Var,0.0,Oscillatory-envelope dynamics
+O2_Gamma_Abs,0.0,Band-power features
+O2_Theta_CV,0.0,Oscillatory-envelope dynamics
+O2_Theta_Bursts,0.0,Oscillatory-envelope dynamics
+O2_Envelope_Sync,0.0,Functional connectivity / synchrony
+O2_Mean,0.0,Time-domain statistics
+O2_Alpha_Abs,0.0,Band-power features
+O2_Variance,0.0,Time-domain statistics
+O2_Energy,0.0,Time-domain statistics
+O2_Peak2Peak,0.0,Time-domain statistics
+O2_Kurtosis,0.0,Time-domain statistics
+O2_Skewness,0.0,Time-domain statistics
+O2_Beta_Rel,0.0,Band-power features
+O2_HjorthMobility,0.0,Hjorth features
+O2_HjorthComplexity,0.0,Hjorth features
+O2_ShannonEntropy,0.0,Entropy and complexity
+O2_Beta_Abs,0.0,Band-power features
+O2_RMS,0.0,Time-domain statistics
+PLV_Alpha_F7_Cz,0.0,Functional connectivity / synchrony
+O1_Peak2Peak,0.0,Time-domain statistics
+PLV_Alpha_F7_C4,0.0,Functional connectivity / synchrony
+O1_Energy,0.0,Time-domain statistics
+O1_Variance,0.0,Time-domain statistics
+PLV_Alpha_F7_T4,0.0,Functional connectivity / synchrony
+PLV_Alpha_F7_T5,0.0,Functional connectivity / synchrony
+PLV_Alpha_F7_Pz,0.0,Functional connectivity / synchrony
+PLV_Alpha_F7_P4,0.0,Functional connectivity / synchrony
+O1_RMS,0.0,Time-domain statistics
+PLV_Alpha_Fp2_Fz,0.0,Functional connectivity / synchrony
+O1_Mean,0.0,Time-domain statistics
+PLV_Alpha_F7_O2,0.0,Functional connectivity / synchrony
+O1_Envelope_Sync,0.0,Functional connectivity / synchrony
+O1_Theta_Bursts,0.0,Oscillatory-envelope dynamics
+O1_Theta_CV,0.0,Oscillatory-envelope dynamics
+O1_Theta_Var,0.0,Oscillatory-envelope dynamics
+PLV_Alpha_F3_T3,0.0,Functional connectivity / synchrony
+PLV_Alpha_F3_C3,0.0,Functional connectivity / synchrony
+PLV_Alpha_F3_Cz,0.0,Functional connectivity / synchrony
+PLV_Alpha_F3_C4,0.0,Functional connectivity / synchrony
+PLV_Alpha_F7_O1,0.0,Functional connectivity / synchrony
+O1_SpectralEntropy,0.0,Entropy and complexity
+O1_ShannonEntropy,0.0,Entropy and complexity
+PLV_Alpha_Fp2_F4,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fp2_F8,0.0,Functional connectivity / synchrony
+O1_HjorthMobility,0.0,Hjorth features
+PLV_Alpha_Fp2_T3,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fp2_C3,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fp2_Cz,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fp2_C4,0.0,Functional connectivity / synchrony
+O1_Skewness,0.0,Time-domain statistics
+O1_Kurtosis,0.0,Time-domain statistics
+PLV_Alpha_Fp2_T5,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fp2_P3,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fp2_Pz,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fp2_P4,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fp2_T6,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fp2_O1,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fp2_O2,0.0,Functional connectivity / synchrony
+PLV_Alpha_F7_F4,0.0,Functional connectivity / synchrony
+PLV_Alpha_F7_T3,0.0,Functional connectivity / synchrony
+PLV_Alpha_F7_C3,0.0,Functional connectivity / synchrony
+PLV_Alpha_Fp2_T4,0.0,Functional connectivity / synchrony
+PLV_Theta_F4_Cz,0.0,Functional connectivity / synchrony
+PLV_Theta_F4_C4,0.0,Functional connectivity / synchrony
+PLV_Theta_F4_T4,0.0,Functional connectivity / synchrony
+PLV_Theta_F4_T5,0.0,Functional connectivity / synchrony
+PLV_Theta_F4_P3,0.0,Functional connectivity / synchrony
+PLV_Theta_F4_Pz,0.0,Functional connectivity / synchrony
+PLV_Theta_F4_P4,0.0,Functional connectivity / synchrony
+PLV_Theta_F4_T6,0.0,Functional connectivity / synchrony
+PLV_Theta_F4_O1,0.0,Functional connectivity / synchrony
+PLV_Theta_F4_O2,0.0,Functional connectivity / synchrony
+PLV_Theta_F8_T3,0.0,Functional connectivity / synchrony
+PLV_Theta_F8_C3,0.0,Functional connectivity / synchrony
+PLV_Theta_F8_Cz,0.0,Functional connectivity / synchrony
+PLV_Alpha_C4_P4,0.0,Functional connectivity / synchrony
+PLV_Theta_F8_T4,0.0,Functional connectivity / synchrony
+PLV_Theta_F8_T5,0.0,Functional connectivity / synchrony
+PLV_Theta_F8_P3,0.0,Functional connectivity / synchrony
+PLV_Theta_F8_Pz,0.0,Functional connectivity / synchrony
+PLV_Theta_F8_P4,0.0,Functional connectivity / synchrony
+PLV_Theta_F8_T6,0.0,Functional connectivity / synchrony
+PLV_Theta_F8_O1,0.0,Functional connectivity / synchrony
+PLV_Theta_F8_O2,0.0,Functional connectivity / synchrony
+PLV_Theta_T3_C3,0.0,Functional connectivity / synchrony
+PLV_Theta_T3_Cz,0.0,Functional connectivity / synchrony
+PLV_Theta_T3_C4,0.0,Functional connectivity / synchrony
+PLV_Theta_T3_T4,0.0,Functional connectivity / synchrony
+PLV_Theta_T3_T5,0.0,Functional connectivity / synchrony
+PLV_Theta_T3_P3,0.0,Functional connectivity / synchrony
+PLV_Theta_F8_C4,0.0,Functional connectivity / synchrony
+PLV_Theta_F3_T3,0.0,Functional connectivity / synchrony
+PLV_Theta_F3_C3,0.0,Functional connectivity / synchrony
+PLV_Theta_F3_Cz,0.0,Functional connectivity / synchrony
+PLV_Theta_F3_C4,0.0,Functional connectivity / synchrony
+PLV_Theta_F3_T4,0.0,Functional connectivity / synchrony
+PLV_Theta_F3_T5,0.0,Functional connectivity / synchrony
+PLV_Theta_F3_P3,0.0,Functional connectivity / synchrony
+PLV_Theta_F3_Pz,0.0,Functional connectivity / synchrony
+PLV_Theta_F3_P4,0.0,Functional connectivity / synchrony
+PLV_Theta_F3_T6,0.0,Functional connectivity / synchrony
+PLV_Theta_F3_O1,0.0,Functional connectivity / synchrony
+PLV_Theta_F3_O2,0.0,Functional connectivity / synchrony
+PLV_Theta_Fz_F4,0.0,Functional connectivity / synchrony
+PLV_Theta_F4_C3,0.0,Functional connectivity / synchrony
+PLV_Theta_Fz_T3,0.0,Functional connectivity / synchrony
+PLV_Theta_Fz_C3,0.0,Functional connectivity / synchrony
+PLV_Theta_Fz_Cz,0.0,Functional connectivity / synchrony
+PLV_Theta_Fz_C4,0.0,Functional connectivity / synchrony
+PLV_Theta_Fz_T4,0.0,Functional connectivity / synchrony
+PLV_Theta_Fz_T5,0.0,Functional connectivity / synchrony
+PLV_Theta_Fz_P3,0.0,Functional connectivity / synchrony
+PLV_Theta_Fz_Pz,0.0,Functional connectivity / synchrony
+PLV_Theta_Fz_P4,0.0,Functional connectivity / synchrony
+PLV_Theta_Fz_T6,0.0,Functional connectivity / synchrony
+PLV_Theta_Fz_O1,0.0,Functional connectivity / synchrony
+PLV_Theta_Fz_O2,0.0,Functional connectivity / synchrony
+PLV_Theta_F4_F8,0.0,Functional connectivity / synchrony
+PLV_Theta_F4_T3,0.0,Functional connectivity / synchrony
+PLV_Theta_Fz_F8,0.0,Functional connectivity / synchrony
+PLV_Theta_C4_O2,0.0,Functional connectivity / synchrony
+PLV_Theta_T4_T5,0.0,Functional connectivity / synchrony
+PLV_Theta_T4_P3,0.0,Functional connectivity / synchrony
+PLV_Theta_T4_Pz,0.0,Functional connectivity / synchrony
+PLV_Theta_T4_P4,0.0,Functional connectivity / synchrony
+PLV_Theta_T4_T6,0.0,Functional connectivity / synchrony
+PLV_Theta_T4_O1,0.0,Functional connectivity / synchrony
+PLV_Theta_T4_O2,0.0,Functional connectivity / synchrony
+PLV_Theta_T5_P3,0.0,Functional connectivity / synchrony
+PLV_Theta_T5_Pz,0.0,Functional connectivity / synchrony
+PLV_Theta_T5_P4,0.0,Functional connectivity / synchrony
+PLV_Theta_T5_T6,0.0,Functional connectivity / synchrony
+PLV_Theta_C4_P4,0.0,Functional connectivity / synchrony
+PLV_Theta_T3_Pz,0.0,Functional connectivity / synchrony
+PLV_Theta_P3_Pz,0.0,Functional connectivity / synchrony
+PLV_Theta_P3_P4,0.0,Functional connectivity / synchrony
+PLV_Theta_P3_T6,0.0,Functional connectivity / synchrony
+PLV_Theta_P3_O1,0.0,Functional connectivity / synchrony
+PLV_Theta_P3_O2,0.0,Functional connectivity / synchrony
+PLV_Theta_Pz_P4,0.0,Functional connectivity / synchrony
+PLV_Theta_Pz_T6,0.0,Functional connectivity / synchrony
+PLV_Theta_Pz_O1,0.0,Functional connectivity / synchrony
+PLV_Theta_Pz_O2,0.0,Functional connectivity / synchrony
+PLV_Theta_P4_T6,0.0,Functional connectivity / synchrony
+PLV_Theta_P4_O1,0.0,Functional connectivity / synchrony
+PLV_Theta_P4_O2,0.0,Functional connectivity / synchrony
+PLV_Theta_T6_O1,0.0,Functional connectivity / synchrony
+PLV_Theta_T6_O2,0.0,Functional connectivity / synchrony
+Fp1_Gamma_Abs,0.0,Band-power features
+PLV_Theta_T3_T6,0.0,Functional connectivity / synchrony
+PLV_Theta_T3_O1,0.0,Functional connectivity / synchrony
+PLV_Theta_T3_O2,0.0,Functional connectivity / synchrony
+PLV_Theta_C3_Cz,0.0,Functional connectivity / synchrony
+PLV_Theta_C3_C4,0.0,Functional connectivity / synchrony
+PLV_Theta_C3_T4,0.0,Functional connectivity / synchrony
+PLV_Theta_C3_T5,0.0,Functional connectivity / synchrony
+PLV_Theta_C3_P3,0.0,Functional connectivity / synchrony
+PLV_Theta_C3_Pz,0.0,Functional connectivity / synchrony
+PLV_Theta_C3_P4,0.0,Functional connectivity / synchrony
+PLV_Theta_C3_T6,0.0,Functional connectivity / synchrony
+PLV_Theta_C3_O1,0.0,Functional connectivity / synchrony
+PLV_Theta_C3_O2,0.0,Functional connectivity / synchrony
+PLV_Theta_C4_O1,0.0,Functional connectivity / synchrony
+PLV_Theta_Cz_T4,0.0,Functional connectivity / synchrony
+PLV_Theta_Cz_T5,0.0,Functional connectivity / synchrony
+PLV_Theta_Cz_P3,0.0,Functional connectivity / synchrony
+PLV_Theta_Cz_Pz,0.0,Functional connectivity / synchrony
+PLV_Theta_Cz_P4,0.0,Functional connectivity / synchrony
+PLV_Theta_Cz_T6,0.0,Functional connectivity / synchrony
+PLV_Theta_Cz_O1,0.0,Functional connectivity / synchrony
+PLV_Theta_Cz_O2,0.0,Functional connectivity / synchrony
+PLV_Theta_C4_T4,0.0,Functional connectivity / synchrony
+PLV_Theta_C4_T5,0.0,Functional connectivity / synchrony
+PLV_Theta_C4_P3,0.0,Functional connectivity / synchrony
+PLV_Theta_C4_Pz,0.0,Functional connectivity / synchrony
+Fp1_Beta_Abs,0.0,Band-power features
+PLV_Theta_C4_T6,0.0,Functional connectivity / synchrony
+PLV_Theta_Cz_C4,0.0,Functional connectivity / synchrony
+PLV_Alpha_C4_T4,0.0,Functional connectivity / synchrony
+PLV_Alpha_C4_T5,0.0,Functional connectivity / synchrony
+PLV_Alpha_C4_P3,0.0,Functional connectivity / synchrony
+PLV_Alpha_C4_Pz,0.0,Functional connectivity / synchrony
+T6_Kurtosis,0.0,Time-domain statistics
+PLV_Alpha_C4_T6,0.0,Functional connectivity / synchrony
+PLV_Alpha_C4_O1,0.0,Functional connectivity / synchrony
+PLV_Alpha_C4_O2,0.0,Functional connectivity / synchrony
+PLV_Alpha_T4_T5,0.0,Functional connectivity / synchrony
+PLV_Alpha_T4_P3,0.0,Functional connectivity / synchrony
+PLV_Alpha_T4_Pz,0.0,Functional connectivity / synchrony
+PLV_Alpha_T4_P4,0.0,Functional connectivity / synchrony
+PLV_Alpha_T4_T6,0.0,Functional connectivity / synchrony
+PLV_Theta_F3_F8,0.0,Functional connectivity / synchrony
+PLV_Alpha_T4_O2,0.0,Functional connectivity / synchrony
+PLV_Alpha_T5_P3,0.0,Functional connectivity / synchrony
+PLV_Alpha_T5_Pz,0.0,Functional connectivity / synchrony
+PLV_Alpha_T5_P4,0.0,Functional connectivity / synchrony
+PLV_Alpha_T5_T6,0.0,Functional connectivity / synchrony
+PLV_Alpha_T5_O1,0.0,Functional connectivity / synchrony
+PLV_Alpha_T5_O2,0.0,Functional connectivity / synchrony
+PLV_Alpha_P3_Pz,0.0,Functional connectivity / synchrony
+PLV_Alpha_P3_P4,0.0,Functional connectivity / synchrony
+PLV_Alpha_P3_T6,0.0,Functional connectivity / synchrony
+PLV_Alpha_P3_O1,0.0,Functional connectivity / synchrony
+PLV_Alpha_P3_O2,0.0,Functional connectivity / synchrony
+PLV_Alpha_Pz_P4,0.0,Functional connectivity / synchrony
+PLV_Alpha_Pz_T6,0.0,Functional connectivity / synchrony
+PLV_Alpha_T4_O1,0.0,Functional connectivity / synchrony
+PLV_Alpha_T3_Cz,0.0,Functional connectivity / synchrony
+PLV_Alpha_T3_C4,0.0,Functional connectivity / synchrony
+PLV_Alpha_T3_T4,0.0,Functional connectivity / synchrony
+PLV_Alpha_T3_T5,0.0,Functional connectivity / synchrony
+PLV_Alpha_T3_P3,0.0,Functional connectivity / synchrony
+PLV_Alpha_T3_Pz,0.0,Functional connectivity / synchrony
+PLV_Alpha_T3_P4,0.0,Functional connectivity / synchrony
+PLV_Alpha_T3_T6,0.0,Functional connectivity / synchrony
+PLV_Alpha_T3_O1,0.0,Functional connectivity / synchrony
+PLV_Alpha_T3_O2,0.0,Functional connectivity / synchrony
+PLV_Alpha_C3_Cz,0.0,Functional connectivity / synchrony
+PLV_Alpha_C3_C4,0.0,Functional connectivity / synchrony
+PLV_Alpha_C3_T4,0.0,Functional connectivity / synchrony
+PLV_Alpha_Cz_O2,0.0,Functional connectivity / synchrony
+PLV_Alpha_C3_P3,0.0,Functional connectivity / synchrony
+PLV_Alpha_C3_Pz,0.0,Functional connectivity / synchrony
+PLV_Alpha_C3_P4,0.0,Functional connectivity / synchrony
+PLV_Alpha_C3_T6,0.0,Functional connectivity / synchrony
+PLV_Alpha_C3_O1,0.0,Functional connectivity / synchrony
+PLV_Alpha_C3_O2,0.0,Functional connectivity / synchrony
+PLV_Alpha_Cz_C4,0.0,Functional connectivity / synchrony
+PLV_Alpha_Cz_T4,0.0,Functional connectivity / synchrony
+PLV_Alpha_Cz_T5,0.0,Functional connectivity / synchrony
+PLV_Alpha_Cz_P3,0.0,Functional connectivity / synchrony
+PLV_Alpha_Cz_Pz,0.0,Functional connectivity / synchrony
+PLV_Alpha_Cz_P4,0.0,Functional connectivity / synchrony
+PLV_Alpha_Cz_T6,0.0,Functional connectivity / synchrony
+PLV_Alpha_Cz_O1,0.0,Functional connectivity / synchrony
+PLV_Alpha_C3_T5,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp2_Cz,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp2_C4,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp2_T4,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp2_T5,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp2_P3,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp2_Pz,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp2_P4,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp2_T6,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp2_O1,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp2_O2,0.0,Functional connectivity / synchrony
+PLV_Theta_F7_F3,0.0,Functional connectivity / synchrony
+PLV_Theta_F7_Fz,0.0,Functional connectivity / synchrony
+PLV_Theta_F7_F4,0.0,Functional connectivity / synchrony
+PLV_Alpha_Pz_O1,0.0,Functional connectivity / synchrony
+PLV_Theta_F7_T3,0.0,Functional connectivity / synchrony
+PLV_Theta_F7_C3,0.0,Functional connectivity / synchrony
+PLV_Theta_F7_Cz,0.0,Functional connectivity / synchrony
+PLV_Theta_F7_C4,0.0,Functional connectivity / synchrony
+PLV_Theta_F7_T4,0.0,Functional connectivity / synchrony
+PLV_Theta_F7_T5,0.0,Functional connectivity / synchrony
+PLV_Theta_F7_P3,0.0,Functional connectivity / synchrony
+PLV_Theta_F7_Pz,0.0,Functional connectivity / synchrony
+PLV_Theta_F7_P4,0.0,Functional connectivity / synchrony
+PLV_Theta_F7_T6,0.0,Functional connectivity / synchrony
+PLV_Theta_F7_O1,0.0,Functional connectivity / synchrony
+PLV_Theta_F7_O2,0.0,Functional connectivity / synchrony
+PLV_Theta_F3_Fz,0.0,Functional connectivity / synchrony
+PLV_Theta_F3_F4,0.0,Functional connectivity / synchrony
+PLV_Theta_F7_F8,0.0,Functional connectivity / synchrony
+PLV_Alpha_Pz_O2,0.0,Functional connectivity / synchrony
+PLV_Alpha_P4_T6,0.0,Functional connectivity / synchrony
+PLV_Alpha_P4_O1,0.0,Functional connectivity / synchrony
+PLV_Alpha_T6_O1,0.0,Functional connectivity / synchrony
+PLV_Alpha_T6_O2,0.0,Functional connectivity / synchrony
+PLV_Alpha_O1_O2,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp1_Fp2,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp1_F7,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp1_F3,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp1_Fz,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp1_F4,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp1_F8,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp1_T3,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp1_C3,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp2_C3,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp1_C4,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp1_T4,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp1_T5,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp1_P3,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp1_Pz,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp1_P4,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp1_T6,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp1_O1,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp1_O2,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp2_F7,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp2_F3,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp2_Fz,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp2_F4,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp2_T3,0.0,Functional connectivity / synchrony
+PLV_Theta_Fp1_Cz,0.0,Functional connectivity / synchrony
+F4_Theta_Var,0.0,Oscillatory-envelope dynamics
+F4_Theta_CV,0.0,Oscillatory-envelope dynamics
+F4_Theta_Bursts,0.0,Oscillatory-envelope dynamics
+F4_Envelope_Sync,0.0,Functional connectivity / synchrony
+F4_Mean,0.0,Time-domain statistics
+F4_RMS,0.0,Time-domain statistics
+F4_Variance,0.0,Time-domain statistics
+F4_Energy,0.0,Time-domain statistics
+F4_Peak2Peak,0.0,Time-domain statistics
+F4_Kurtosis,0.0,Time-domain statistics
+F4_Skewness,0.0,Time-domain statistics
+F4_ShannonEntropy,0.0,Entropy and complexity
+Pz_Energy,0.0,Time-domain statistics
+F4_TotalPower,0.0,Spectral summary features
+F8_Delta_Abs,0.0,Band-power features
+F8_Theta_Abs,0.0,Band-power features
+F8_Alpha_Abs,0.0,Band-power features
+F8_Beta_Abs,0.0,Band-power features
+F8_Beta_Rel,0.0,Band-power features
+F8_Gamma_Abs,0.0,Band-power features
+F8_Gamma_Rel,0.0,Band-power features
+F8_Alpha_Mean,0.0,Oscillatory-envelope dynamics
+F8_Alpha_Var,0.0,Oscillatory-envelope dynamics
+F8_Alpha_CV,0.0,Oscillatory-envelope dynamics
+F8_Alpha_Bursts,0.0,Oscillatory-envelope dynamics
+F4_SpectralEntropy,0.0,Entropy and complexity
+Fz_Theta_Mean,0.0,Oscillatory-envelope dynamics
+Fz_Theta_Var,0.0,Oscillatory-envelope dynamics
+Fz_Theta_CV,0.0,Oscillatory-envelope dynamics
+Fz_Theta_Bursts,0.0,Oscillatory-envelope dynamics
+Fz_Envelope_Sync,0.0,Functional connectivity / synchrony
+Fz_Mean,0.0,Time-domain statistics
+Fz_RMS,0.0,Time-domain statistics
+Fz_Variance,0.0,Time-domain statistics
+Fz_Energy,0.0,Time-domain statistics
+Fz_Peak2Peak,0.0,Time-domain statistics
+Fz_Kurtosis,0.0,Time-domain statistics
+Fz_Skewness,0.0,Time-domain statistics
+F4_Theta_Mean,0.0,Oscillatory-envelope dynamics
+Fz_SpectralEntropy,0.0,Entropy and complexity
+Fz_DifferentialEntropyStd,0.0,Entropy and complexity
+Fz_TotalPower,0.0,Spectral summary features
+F4_Alpha_Abs,0.0,Band-power features
+F4_Alpha_Rel,0.0,Band-power features
+F4_Beta_Abs,0.0,Band-power features
+F4_Gamma_Abs,0.0,Band-power features
+F4_Gamma_Rel,0.0,Band-power features
+F4_Alpha_Mean,0.0,Oscillatory-envelope dynamics
+F4_Alpha_Var,0.0,Oscillatory-envelope dynamics
+F4_Alpha_CV,0.0,Oscillatory-envelope dynamics
+F4_Alpha_Bursts,0.0,Oscillatory-envelope dynamics
+Fz_ShannonEntropy,0.0,Entropy and complexity
+T3_Theta_CV,0.0,Oscillatory-envelope dynamics
+T3_Theta_Bursts,0.0,Oscillatory-envelope dynamics
+T3_Envelope_Sync,0.0,Functional connectivity / synchrony
+T3_Mean,0.0,Time-domain statistics
+T3_RMS,0.0,Time-domain statistics
+T3_Variance,0.0,Time-domain statistics
+T3_Energy,0.0,Time-domain statistics
+T3_Peak2Peak,0.0,Time-domain statistics
+T3_Kurtosis,0.0,Time-domain statistics
+T3_Skewness,0.0,Time-domain statistics
+T3_ShannonEntropy,0.0,Entropy and complexity
+T3_TotalPower,0.0,Spectral summary features
+F8_Theta_Mean,0.0,Oscillatory-envelope dynamics
+C3_Theta_Abs,0.0,Band-power features
+C3_Alpha_Rel,0.0,Band-power features
+C3_Beta_Abs,0.0,Band-power features
+C3_Beta_Rel,0.0,Band-power features
+C3_Gamma_Abs,0.0,Band-power features
+C3_Gamma_Rel,0.0,Band-power features
+C3_Alpha_CV,0.0,Oscillatory-envelope dynamics
+C3_Alpha_Bursts,0.0,Oscillatory-envelope dynamics
+C3_Theta_Mean,0.0,Oscillatory-envelope dynamics
+C3_Theta_Var,0.0,Oscillatory-envelope dynamics
+C3_Theta_CV,0.0,Oscillatory-envelope dynamics
+C3_Theta_Bursts,0.0,Oscillatory-envelope dynamics
+C3_Delta_Abs,0.0,Band-power features
+F8_Theta_Var,0.0,Oscillatory-envelope dynamics
+F8_Theta_CV,0.0,Oscillatory-envelope dynamics
+F8_Theta_Bursts,0.0,Oscillatory-envelope dynamics
+F8_Envelope_Sync,0.0,Functional connectivity / synchrony
+F8_Mean,0.0,Time-domain statistics
+F8_RMS,0.0,Time-domain statistics
+F8_Variance,0.0,Time-domain statistics
+F8_Energy,0.0,Time-domain statistics
+F8_Peak2Peak,0.0,Time-domain statistics
+F8_Kurtosis,0.0,Time-domain statistics
+F8_Skewness,0.0,Time-domain statistics
+F8_ShannonEntropy,0.0,Entropy and complexity
+T3_Theta_Var,0.0,Oscillatory-envelope dynamics
+T3_Delta_Abs,0.0,Band-power features
+T3_Theta_Abs,0.0,Band-power features
+T3_Alpha_Abs,0.0,Band-power features
+T3_Alpha_Rel,0.0,Band-power features
+T3_Beta_Abs,0.0,Band-power features
+T3_Gamma_Abs,0.0,Band-power features
+T3_Gamma_Rel,0.0,Band-power features
+T3_Alpha_Mean,0.0,Oscillatory-envelope dynamics
+T3_Alpha_Var,0.0,Oscillatory-envelope dynamics
+T3_Alpha_CV,0.0,Oscillatory-envelope dynamics
+T3_Alpha_Bursts,0.0,Oscillatory-envelope dynamics
+T3_Theta_Mean,0.0,Oscillatory-envelope dynamics
+F8_TotalPower,0.0,Spectral summary features
+Fp2_Delta_Abs,0.0,Band-power features
+Fp2_Theta_Abs,0.0,Band-power features
+Fp2_Alpha_Abs,0.0,Band-power features
+Fp2_Beta_Rel,0.0,Band-power features
+Fp2_Gamma_Rel,0.0,Band-power features
+Fp2_Alpha_Var,0.0,Oscillatory-envelope dynamics
+Fp2_Alpha_CV,0.0,Oscillatory-envelope dynamics
+Fp2_Alpha_Bursts,0.0,Oscillatory-envelope dynamics
+Fp2_Theta_Mean,0.0,Oscillatory-envelope dynamics
+Fp2_Theta_Var,0.0,Oscillatory-envelope dynamics
+Fp2_Theta_CV,0.0,Oscillatory-envelope dynamics
+Fp2_Theta_Bursts,0.0,Oscillatory-envelope dynamics
+Fz_Alpha_Bursts,0.0,Oscillatory-envelope dynamics
+Fp2_Mean,0.0,Time-domain statistics
+Fp2_Variance,0.0,Time-domain statistics
+Fp2_Energy,0.0,Time-domain statistics
+Fp2_Kurtosis,0.0,Time-domain statistics
+Fp2_Skewness,0.0,Time-domain statistics
+Fp2_ShannonEntropy,0.0,Entropy and complexity
+Fp2_SpectralEntropy,0.0,Entropy and complexity
+Fp2_DifferentialEntropyStd,0.0,Entropy and complexity
+F7_Delta_Abs,0.0,Band-power features
+F7_Theta_Abs,0.0,Band-power features
+F7_Alpha_Abs,0.0,Band-power features
+F7_Beta_Abs,0.0,Band-power features
+Fp2_Envelope_Sync,0.0,Functional connectivity / synchrony
+PLV_Theta_T5_O1,0.0,Functional connectivity / synchrony
+Fp1_Gamma_Rel,0.0,Band-power features
+PLV_Theta_O1_O2,0.0,Functional connectivity / synchrony
+Fp1_Delta_Abs,0.0,Band-power features
+Fp1_Theta_Abs,0.0,Band-power features
+Fp1_Alpha_Abs,0.0,Band-power features
+Fp1_Kurtosis,0.0,Time-domain statistics
+Fp1_Alpha_Mean,0.0,Oscillatory-envelope dynamics
+Fp1_Alpha_Var,0.0,Oscillatory-envelope dynamics
+Fp1_Alpha_CV,0.0,Oscillatory-envelope dynamics
+Fp1_Alpha_Bursts,0.0,Oscillatory-envelope dynamics
+Fp1_Theta_Mean,0.0,Oscillatory-envelope dynamics
+Fp1_TotalPower,0.0,Spectral summary features
+Fp1_Theta_CV,0.0,Oscillatory-envelope dynamics
+Fp1_Theta_Bursts,0.0,Oscillatory-envelope dynamics
+Fp1_Mean,0.0,Time-domain statistics
+Fp1_RMS,0.0,Time-domain statistics
+Fp1_Variance,0.0,Time-domain statistics
+Fp1_Energy,0.0,Time-domain statistics
+Fp1_Peak2Peak,0.0,Time-domain statistics
+Fp1_Beta_Rel,0.0,Band-power features
+Fp1_Skewness,0.0,Time-domain statistics
+Fp1_ShannonEntropy,0.0,Entropy and complexity
+Fp1_SpectralEntropy,0.0,Entropy and complexity
+Fp1_DifferentialEntropyStd,0.0,Entropy and complexity
+Fp1_Theta_Var,0.0,Oscillatory-envelope dynamics
+F3_Alpha_CV,0.0,Oscillatory-envelope dynamics
+F3_Alpha_Bursts,0.0,Oscillatory-envelope dynamics
+F3_Theta_Mean,0.0,Oscillatory-envelope dynamics
+F3_Theta_Var,0.0,Oscillatory-envelope dynamics
+F3_Theta_CV,0.0,Oscillatory-envelope dynamics
+F3_Theta_Bursts,0.0,Oscillatory-envelope dynamics
+F3_Envelope_Sync,0.0,Functional connectivity / synchrony
+F3_Mean,0.0,Time-domain statistics
+F3_RMS,0.0,Time-domain statistics
+F3_Variance,0.0,Time-domain statistics
+F3_Energy,0.0,Time-domain statistics
+F3_Peak2Peak,0.0,Time-domain statistics
+F7_Gamma_Abs,0.0,Band-power features
+F3_Skewness,0.0,Time-domain statistics
+F3_ShannonEntropy,0.0,Entropy and complexity
+F3_DifferentialEntropyStd,0.0,Entropy and complexity
+F3_TotalPower,0.0,Spectral summary features
+Fz_Theta_Abs,0.0,Band-power features
+Fz_Alpha_Abs,0.0,Band-power features
+Fz_Beta_Abs,0.0,Band-power features
+Fz_Beta_Rel,0.0,Band-power features
+Fz_Gamma_Abs,0.0,Band-power features
+Fz_Gamma_Rel,0.0,Band-power features
+Fz_Alpha_Var,0.0,Oscillatory-envelope dynamics
+Fz_Alpha_CV,0.0,Oscillatory-envelope dynamics
+F3_Kurtosis,0.0,Time-domain statistics
+F7_Alpha_Mean,0.0,Oscillatory-envelope dynamics
+F7_Alpha_Var,0.0,Oscillatory-envelope dynamics
+F7_Alpha_CV,0.0,Oscillatory-envelope dynamics
+F7_Alpha_Bursts,0.0,Oscillatory-envelope dynamics
+F7_Theta_Mean,0.0,Oscillatory-envelope dynamics
+F7_Theta_Var,0.0,Oscillatory-envelope dynamics
+F7_Theta_CV,0.0,Oscillatory-envelope dynamics
+F7_Theta_Bursts,0.0,Oscillatory-envelope dynamics
+F7_Envelope_Sync,0.0,Functional connectivity / synchrony
+F7_Mean,0.0,Time-domain statistics
+F7_RMS,0.0,Time-domain statistics
+F7_Variance,0.0,Time-domain statistics
+F3_Alpha_Var,0.0,Oscillatory-envelope dynamics
+F7_Peak2Peak,0.0,Time-domain statistics
+F7_Kurtosis,0.0,Time-domain statistics
+F7_Skewness,0.0,Time-domain statistics
+F7_ShannonEntropy,0.0,Entropy and complexity
+F7_DifferentialEntropyStd,0.0,Entropy and complexity
+F7_TotalPower,0.0,Spectral summary features
+F3_Theta_Abs,0.0,Band-power features
+F3_Alpha_Abs,0.0,Band-power features
+F3_Beta_Abs,0.0,Band-power features
+F3_Gamma_Abs,0.0,Band-power features
+F3_Gamma_Rel,0.0,Band-power features
+F3_Alpha_Mean,0.0,Oscillatory-envelope dynamics
+F7_Energy,0.0,Time-domain statistics
+P3_Kurtosis,0.0,Time-domain statistics
+P3_Skewness,0.0,Time-domain statistics
+P3_ShannonEntropy,0.0,Entropy and complexity
+P3_SpectralEntropy,0.0,Entropy and complexity
+P3_DifferentialEntropyStd,0.0,Entropy and complexity
+P3_TotalPower,0.0,Spectral summary features
+Pz_Delta_Abs,0.0,Band-power features
+Pz_Alpha_Abs,0.0,Band-power features
+Pz_Alpha_Rel,0.0,Band-power features
+Pz_Beta_Abs,0.0,Band-power features
+Pz_Gamma_Abs,0.0,Band-power features
+Pz_Gamma_Rel,0.0,Band-power features
+C3_Envelope_Sync,0.0,Functional connectivity / synchrony
+Pz_Alpha_Var,0.0,Oscillatory-envelope dynamics
+Pz_Alpha_CV,0.0,Oscillatory-envelope dynamics
+Pz_Alpha_Bursts,0.0,Oscillatory-envelope dynamics
+Pz_Theta_Mean,0.0,Oscillatory-envelope dynamics
+Pz_Theta_Var,0.0,Oscillatory-envelope dynamics
+Pz_Theta_CV,0.0,Oscillatory-envelope dynamics
+Pz_Theta_Bursts,0.0,Oscillatory-envelope dynamics
+Pz_Envelope_Sync,0.0,Functional connectivity / synchrony
+Pz_Mean,0.0,Time-domain statistics
+Pz_RMS,0.0,Time-domain statistics
+Pz_Variance,0.0,Time-domain statistics
+PLV_Theta_T5_O2,0.0,Functional connectivity / synchrony
+Pz_Alpha_Mean,0.0,Oscillatory-envelope dynamics
+T5_Skewness,0.0,Time-domain statistics
+T5_HjorthMobility,0.0,Hjorth features
+T5_ShannonEntropy,0.0,Entropy and complexity
+T5_SpectralEntropy,0.0,Entropy and complexity
+T5_DifferentialEntropyStd,0.0,Entropy and complexity
+T5_TotalPower,0.0,Spectral summary features
+P3_Delta_Abs,0.0,Band-power features
+P3_Theta_Abs,0.0,Band-power features
+P3_Alpha_Abs,0.0,Band-power features
+P3_Alpha_Rel,0.0,Band-power features
+P3_Beta_Abs,0.0,Band-power features
+P3_Gamma_Abs,0.0,Band-power features
+P3_Peak2Peak,0.0,Time-domain statistics
+P3_Alpha_Var,0.0,Oscillatory-envelope dynamics
+P3_Alpha_CV,0.0,Oscillatory-envelope dynamics
+P3_Alpha_Bursts,0.0,Oscillatory-envelope dynamics
+P3_Theta_Mean,0.0,Oscillatory-envelope dynamics
+P3_Theta_Var,0.0,Oscillatory-envelope dynamics
+P3_Theta_CV,0.0,Oscillatory-envelope dynamics
+P3_Theta_Bursts,0.0,Oscillatory-envelope dynamics
+P3_Envelope_Sync,0.0,Functional connectivity / synchrony
+P3_Mean,0.0,Time-domain statistics
+P3_RMS,0.0,Time-domain statistics
+P3_Variance,0.0,Time-domain statistics
+P3_Energy,0.0,Time-domain statistics
+P3_Gamma_Rel,0.0,Band-power features
+P4_Skewness,0.0,Time-domain statistics
+P4_HjorthMobility,0.0,Hjorth features
+P4_ShannonEntropy,0.0,Entropy and complexity
+P4_SpectralEntropy,0.0,Entropy and complexity
+P4_DifferentialEntropyStd,0.0,Entropy and complexity
+P4_TotalPower,0.0,Spectral summary features
+T6_Delta_Abs,0.0,Band-power features
+T6_Theta_Abs,0.0,Band-power features
+T6_Alpha_Abs,0.0,Band-power features
+T6_Beta_Abs,0.0,Band-power features
+T6_Beta_Rel,0.0,Band-power features
+T6_Gamma_Abs,0.0,Band-power features
+Pz_Peak2Peak,0.0,Time-domain statistics
+T6_Alpha_CV,0.0,Oscillatory-envelope dynamics
+T6_Alpha_Bursts,0.0,Oscillatory-envelope dynamics
+T6_Theta_Mean,0.0,Oscillatory-envelope dynamics
+T6_Theta_Var,0.0,Oscillatory-envelope dynamics
+T6_Theta_CV,0.0,Oscillatory-envelope dynamics
+T6_Theta_Bursts,0.0,Oscillatory-envelope dynamics
+T6_Envelope_Sync,0.0,Functional connectivity / synchrony
+T6_Mean,0.0,Time-domain statistics
+T6_RMS,0.0,Time-domain statistics
+T6_Variance,0.0,Time-domain statistics
+T6_Energy,0.0,Time-domain statistics
+T6_Peak2Peak,0.0,Time-domain statistics
+T6_Alpha_Var,0.0,Oscillatory-envelope dynamics
+Pz_Kurtosis,0.0,Time-domain statistics
+Pz_Skewness,0.0,Time-domain statistics
+Pz_ShannonEntropy,0.0,Entropy and complexity
+Pz_SpectralEntropy,0.0,Entropy and complexity
+Pz_DifferentialEntropyStd,0.0,Entropy and complexity
+Pz_TotalPower,0.0,Spectral summary features
+P4_Delta_Abs,0.0,Band-power features
+P4_Theta_Abs,0.0,Band-power features
+P4_Alpha_Abs,0.0,Band-power features
+P4_Beta_Abs,0.0,Band-power features
+P4_Beta_Rel,0.0,Band-power features
+P4_Gamma_Abs,0.0,Band-power features
+P4_Kurtosis,0.0,Time-domain statistics
+P4_Alpha_CV,0.0,Oscillatory-envelope dynamics
+P4_Alpha_Bursts,0.0,Oscillatory-envelope dynamics
+P4_Theta_Mean,0.0,Oscillatory-envelope dynamics
+P4_Theta_Var,0.0,Oscillatory-envelope dynamics
+P4_Theta_CV,0.0,Oscillatory-envelope dynamics
+P4_Theta_Bursts,0.0,Oscillatory-envelope dynamics
+P4_Envelope_Sync,0.0,Functional connectivity / synchrony
+P4_Mean,0.0,Time-domain statistics
+P4_RMS,0.0,Time-domain statistics
+P4_Variance,0.0,Time-domain statistics
+P4_Energy,0.0,Time-domain statistics
+P4_Peak2Peak,0.0,Time-domain statistics
+P4_Gamma_Rel,0.0,Band-power features
+Cz_Energy,0.0,Time-domain statistics
+Cz_Kurtosis,0.0,Time-domain statistics
+Cz_Skewness,0.0,Time-domain statistics
+Cz_ShannonEntropy,0.0,Entropy and complexity
+Cz_TotalPower,0.0,Spectral summary features
+Cz_DominantFreq,0.0,Spectral summary features
+C4_Delta_Abs,0.0,Band-power features
+C4_Theta_Abs,0.0,Band-power features
+C4_Alpha_Abs,0.0,Band-power features
+C4_Alpha_Rel,0.0,Band-power features
+C4_Beta_Abs,0.0,Band-power features
+C4_Gamma_Abs,0.0,Band-power features
+T5_Kurtosis,0.0,Time-domain statistics
+C4_Alpha_Var,0.0,Oscillatory-envelope dynamics
+C4_Alpha_CV,0.0,Oscillatory-envelope dynamics
+C4_Alpha_Bursts,0.0,Oscillatory-envelope dynamics
+C4_Theta_Mean,0.0,Oscillatory-envelope dynamics
+C4_Theta_Var,0.0,Oscillatory-envelope dynamics
+C4_Theta_CV,0.0,Oscillatory-envelope dynamics
+C4_Theta_Bursts,0.0,Oscillatory-envelope dynamics
+C4_Envelope_Sync,0.0,Functional connectivity / synchrony
+C4_Mean,0.0,Time-domain statistics
+C4_RMS,0.0,Time-domain statistics
+C4_Variance,0.0,Time-domain statistics
+C4_Energy,0.0,Time-domain statistics
+C4_Gamma_Rel,0.0,Band-power features
+C3_Mean,0.0,Time-domain statistics
+C3_RMS,0.0,Time-domain statistics
+C3_Variance,0.0,Time-domain statistics
+C3_Energy,0.0,Time-domain statistics
+C3_Peak2Peak,0.0,Time-domain statistics
+C3_Kurtosis,0.0,Time-domain statistics
+C3_Skewness,0.0,Time-domain statistics
+C3_ShannonEntropy,0.0,Entropy and complexity
+C3_SpectralEntropy,0.0,Entropy and complexity
+C3_DifferentialEntropyStd,0.0,Entropy and complexity
+C3_TotalPower,0.0,Spectral summary features
+Cz_Alpha_Abs,0.0,Band-power features
+Cz_Variance,0.0,Time-domain statistics
+Cz_Beta_Abs,0.0,Band-power features
+Cz_Beta_Rel,0.0,Band-power features
+Cz_Gamma_Abs,0.0,Band-power features
+Cz_Gamma_Rel,0.0,Band-power features
+Cz_Alpha_Mean,0.0,Oscillatory-envelope dynamics
+Cz_Alpha_Var,0.0,Oscillatory-envelope dynamics
+Cz_Alpha_CV,0.0,Oscillatory-envelope dynamics
+Cz_Alpha_Bursts,0.0,Oscillatory-envelope dynamics
+Cz_Theta_CV,0.0,Oscillatory-envelope dynamics
+Cz_Theta_Bursts,0.0,Oscillatory-envelope dynamics
+Cz_Envelope_Sync,0.0,Functional connectivity / synchrony
+Cz_Mean,0.0,Time-domain statistics
+Cz_Alpha_Rel,0.0,Band-power features
+T4_Kurtosis,0.0,Time-domain statistics
+T4_Skewness,0.0,Time-domain statistics
+T4_ShannonEntropy,0.0,Entropy and complexity
+T4_TotalPower,0.0,Spectral summary features
+T5_Delta_Abs,0.0,Band-power features
+T5_Theta_Abs,0.0,Band-power features
+T5_Alpha_Abs,0.0,Band-power features
+T5_Alpha_Rel,0.0,Band-power features
+T5_Beta_Abs,0.0,Band-power features
+T5_Beta_Rel,0.0,Band-power features
+T5_Gamma_Abs,0.0,Band-power features
+T5_Gamma_Rel,0.0,Band-power features
+C4_Peak2Peak,0.0,Time-domain statistics
+T5_Alpha_CV,0.0,Oscillatory-envelope dynamics
+T5_Alpha_Bursts,0.0,Oscillatory-envelope dynamics
+T5_Theta_Mean,0.0,Oscillatory-envelope dynamics
+T5_Theta_Var,0.0,Oscillatory-envelope dynamics
+T5_Theta_CV,0.0,Oscillatory-envelope dynamics
+T5_Theta_Bursts,0.0,Oscillatory-envelope dynamics
+T5_Envelope_Sync,0.0,Functional connectivity / synchrony
+T5_Mean,0.0,Time-domain statistics
+T5_RMS,0.0,Time-domain statistics
+T5_Variance,0.0,Time-domain statistics
+T5_Energy,0.0,Time-domain statistics
+T5_Peak2Peak,0.0,Time-domain statistics
+T5_Alpha_Var,0.0,Oscillatory-envelope dynamics
+C4_Kurtosis,0.0,Time-domain statistics
+C4_Skewness,0.0,Time-domain statistics
+C4_ShannonEntropy,0.0,Entropy and complexity
+C4_SpectralEntropy,0.0,Entropy and complexity
+C4_DifferentialEntropyStd,0.0,Entropy and complexity
+C4_TotalPower,0.0,Spectral summary features
+T4_Delta_Abs,0.0,Band-power features
+T4_Theta_Abs,0.0,Band-power features
+T4_Alpha_Abs,0.0,Band-power features
+T4_Alpha_Rel,0.0,Band-power features
+T4_Beta_Abs,0.0,Band-power features
+T4_Gamma_Abs,0.0,Band-power features
+T4_Peak2Peak,0.0,Time-domain statistics
+T4_Alpha_Var,0.0,Oscillatory-envelope dynamics
+T4_Alpha_CV,0.0,Oscillatory-envelope dynamics
+T4_Alpha_Bursts,0.0,Oscillatory-envelope dynamics
+T4_Theta_Mean,0.0,Oscillatory-envelope dynamics
+T4_Theta_Var,0.0,Oscillatory-envelope dynamics
+T4_Theta_CV,0.0,Oscillatory-envelope dynamics
+T4_Theta_Bursts,0.0,Oscillatory-envelope dynamics
+T4_Envelope_Sync,0.0,Functional connectivity / synchrony
+T4_Mean,0.0,Time-domain statistics
+T4_RMS,0.0,Time-domain statistics
+T4_Variance,0.0,Time-domain statistics
+T4_Energy,0.0,Time-domain statistics
+T4_Gamma_Rel,0.0,Band-power features
