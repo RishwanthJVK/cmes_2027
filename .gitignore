@@ -5,3 +5,8 @@ dataset 2 analysis/dataset_2_extratrees_and_band_importance/output/csv files/ica
 dataset 2 analysis/dataset_2_extratrees_and_band_importance/output/csv files/raw_wide_features.csv
 dataset 2 analysis/dataset_2_feature_wise_analysis/output/csv files/windowed_features_all_families.csv
 dataset 1 analysis/dataset_1_extratrees_and_band_importance/output/csv files/raw_and_clean_windowed_features.csv
+
+# New paths for Dataset 2 ExtraTrees wide features
+dataset 2 analysis/dataset_2_extratrees_and_band_importance/csv files/windowed_features_raw_and_ica_cleaned.csv
+dataset 2 analysis/dataset_2_extratrees_and_band_importance/csv files/ica_cleaned_wide_features.csv
+dataset 2 analysis/dataset_2_extratrees_and_band_importance/csv files/raw_wide_features.csv
