@@ -39,6 +39,7 @@ Dataset 1 is a 19-channel EEG dataset. The original dataset files and bundled MA
 | `dataset_1_extratrees_and_band_importance/dataset_1_extratrees_and_band_importance.ipynb` | Extracts matched window features, applies group-preserving ExtraTrees classification, calculates feature importance for each preprocessing branch, aggregates importance by frequency band, and creates summary artefacts. |
 | `dataset_1_feature_wise_analysis/dataset_1_feature_wise_analysis.ipynb` | Computes spectral, envelope, synchrony, time-domain, Hjorth, entropy, and complexity features. It uses grouped feature selection and ExtraTrees modelling and produces feature- and family-level importance inventories. |
 | `dataset1_deep_mlp/dataset1_deep_mlp.ipynb` | Forms window-level feature vectors for raw and ICA-cleaned data, performs foldwise standardisation, trains a multilayer perceptron, aggregates predictions to epochs, and creates classification artefacts. |
+| `dataset_1_ablation_study/dataset_1_ablation_study.ipynb` | Evaluates the classification contribution of feature families, scalp regions, and frequency bands through grouped cross-validation, performing systematic omission and isolation (ablation) experiments on SVM and Logistic Regression classifiers. |
 
 ### Dataset 1 derived files
 
@@ -47,6 +48,7 @@ Dataset 1 is a 19-channel EEG dataset. The original dataset files and bundled MA
 * `dataset_1_extratrees_and_band_importance/output/csv files/raw_and_clean_windowed_features.csv` is the matched feature matrix. `raw_feature_importance.csv` and `ica_cleaned_feature_importance.csv` store branch-specific importances, `bandwise_feature_importance.csv` aggregates them by band, and `raw_vs_clean_metrics.csv` stores evaluation fields. The four figures visualise these artefacts.
 * `dataset_1_feature_wise_analysis/output/csv files/feature_importance_by_feature.csv` and `feature_importance_by_umbrella.csv` record individual-feature and feature-family importance fields. The two plots display the corresponding inventories.
 * `dataset1_deep_mlp/output/csv files/raw_vs_clean_metrics.csv` stores DeepMLP evaluation fields. Its three plots provide two confusion matrices and a metric display.
+* `dataset_1_ablation_study/output/csv files/ablation_metrics.csv` stores classification evaluation metrics for various ablation configurations (omitting and isolating feature families, scalp regions, and frequency bands). The 18 PNGs in `output/plots/` show omission study comparisons (Accuracy, F1-score, and ROC-AUC) for SVM and Logistic Regression under Raw and ICA-cleaned conditions.
 
 ## Dataset 2 analysis
 
@@ -59,6 +61,11 @@ Dataset 2 is a 64-channel Breath Counting EEG dataset. Its BIDS-style recordings
 | `dataset_2_extratrees_and_band_importance/dataset_2_extratrees_and_band_importance.ipynb` | Produces raw and cleaned feature matrices, applies grouped ExtraTrees classification and band-level importance aggregation, and saves feature/importance tables and figures. |
 | `dataset_2_feature_wise_analysis/dataset_2_feature_wise_analysis.ipynb` | Extracts spectral, temporal, entropy/complexity, envelope, and connectivity feature families. It applies grouped feature selection and ExtraTrees modelling and exports feature and family inventories. |
 | `dataset2_deepmlp/dataset2_deepmlp.ipynb` | Builds BDF-derived window vectors for raw and ICA-cleaned branches, trains a multilayer perceptron with foldwise imputation/scaling and early stopping, and aggregates window probabilities to epochs. |
+| `dataset_2_ablation_study/dataset_2_ablation_study.ipynb` | Evaluates classification contributions of feature families, scalp regions, and frequency bands through grouped cross-validation, performing systematic omission and isolation (ablation) experiments on SVM and Logistic Regression classifiers. |
+
+> [!NOTE]
+> **Preprocessing Note for Dataset 2**: While historical comments and docstrings in some notebooks refer to the cleaned condition as "linear EXG regression" (or claim that it is "not an ICA-cleaning pipeline"), all workflows in this directory actually perform ICA-based artifact removal (specifically MNE's `FastICA` fitted on the EEG channels, excluding components based on correlation with the EXG channels).
+
 
 ### Dataset 2 derived files
 
@@ -67,7 +74,9 @@ Dataset 2 is a 64-channel Breath Counting EEG dataset. Its BIDS-style recordings
 * `dataset_2_extratrees_and_band_importance/output/csv files/` contains `raw_feature_importance.csv`, `ica_cleaned_feature_importance.csv`, `raw_bandwise_feature_importance.csv`, `ica_cleaned_bandwise_feature_importance.csv`, and `raw_vs_ica_cleaned_classification_metrics.csv`. These retain feature-importance and evaluation fields. The four figures visualise the same workflow.
 * `dataset_2_feature_wise_analysis/output/csv files/feature_importance_by_feature.csv` and `feature_importance_by_umbrella.csv` retain individual-feature and feature-family inventories. Its two figures display these inventories.
 * `dataset2_deepmlp/output/csv files/window_sample_metadata.csv` stores non-vector identifiers for the DeepMLP windows. `raw_vs_ica_cleaned_deepmlp_metrics.csv` stores metric fields. Its three figures provide confusion matrices and a metric display.
+* `dataset_2_ablation_study/output/csv files/ablation_metrics.csv` stores classification evaluation metrics for various ablation configurations (omitting and isolating feature families, scalp regions, and frequency bands). The 18 PNGs in `output/plots/` show omission study comparisons (Accuracy, F1-score, and ROC-AUC) for SVM and Logistic Regression under Raw and ICA-cleaned conditions.
 * `failed_runs.csv`, where present, is a structured placeholder for processing exceptions.
+
 
 ## Requirements
 
