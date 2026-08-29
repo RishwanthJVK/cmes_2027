@@ -64,7 +64,7 @@ Dataset 2 is a 64-channel Breath Counting EEG dataset. Its BIDS-style recordings
 | `dataset_2_ablation_study/dataset_2_ablation_study.ipynb` | Evaluates classification contributions of feature families, scalp regions, and frequency bands through grouped cross-validation, performing systematic omission and isolation (ablation) experiments on SVM and Logistic Regression classifiers. |
 
 > [!NOTE]
-> **Preprocessing Note for Dataset 2**: While historical comments and docstrings in some notebooks refer to the cleaned condition as "linear EXG regression" (or claim that it is "not an ICA-cleaning pipeline"), all workflows in this directory actually perform ICA-based artifact removal (specifically MNE's `FastICA` fitted on the EEG channels, excluding components based on correlation with the EXG channels).
+> **Preprocessing Note for Dataset 2**: All workflows in this directory perform ICA-based artifact removal (specifically MNE's `FastICA` fitted on the EEG channels, excluding components based on correlation with the EXG channels).
 
 
 ### Dataset 2 derived files
