@@ -1,0 +1,699 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{etoolbox}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage[utf8]{inputenc}
+\usepackage{newunicodechar}
+\newunicodechar{−}{\textminus}
+\usepackage{cite}
+\usepackage{booktabs}   % For standard academic table rules (\toprule, \midrule, \bottomrule)
+\usepackage{multirow}   % For multirow cell spanning
+\usepackage{graphicx}   % Required for \resizebox
+\usepackage{array}      % For enhanced table formatting
+\usepackage{siunitx}    % Optional but recommended for handling numeric formatting
+\usepackage{newunicodechar}
+\newunicodechar{≥}{\geq}
+\patchcmd{\IEEEkeywords}{Index Terms}{Keywords}{}{}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+\title{Spectral characteristics of brain activity during focused and mind-wandering states across frequency bands \vspace{-4mm}
+}
+
+\author{
+\IEEEauthorblockN{
+Shubham\textsuperscript{1},
+Rishwanth JVK\textsuperscript{2},
+Amita Giri\textsuperscript{1}
+}
+
+\IEEEauthorblockA{
+\textsuperscript{1}\textit{Department of Electronics and Communication Engineering, Indian Institute of Technology, Roorkee, 247667, India}\\
+\textsuperscript{2}\textit{Department of Computer Science and Engineering, Manipal Institute of Technology, Karnataka,576104,India}\\
+Emails: shubham1@ece.iitr.ac.in, rishwanthjvk06@gmail.com, amita.giri@ece.iitr.ac.in
+}
+}
+
+\maketitle 
+\begin{abstract}
+ Mind wandering is a common cognitive phenomenon characterized by a shift of attention away from the ongoing task toward internally generated thoughts. Its objective assessment using electroencephalography (EEG) remains challenging due to the complex and dynamic nature of brain activity. In this study, we propose an EEG-based framework for characterizing and classifying mind-wandering states using multiscale EEG features. Various Complexity feature extraction techniques are employed to obtain distinct oscillatory components from multichannel EEG signals, followed by extraction of spectral, statistical, entropy-based, and nonlinear features. The extracted features are subsequently evaluated using machine learning techniques to distinguish between focused and mind-wandering states. The proposed framework provides a multiscale representation of EEG dynamics and identifies informative features associated with changes in cognitive state. The findings demonstrate the potential of objective characterization of mind-wandering-related neural activity.
+
+\end{abstract}
+\textbf{\textit{Keywords---}\textit{Mind wandering}, \textit{EEG}, \textit{Spectral Features}, \textit{Nonlinear Features}, \textit{Cognitive State Classification}.}
+ 
+\section{Introduction}
+Mind wandering is a prevalent cognitive state in which attention shifts away from an ongoing task toward internally generated thoughts \cite{smallwood2013restless}. Previous research has established that mind wandering occurs regularly during everyday activities and is frequently accompanied by attentional lapses and diminished task performance \cite{killingsworth2010wandering}. From a neural perspective, internally directed cognition has been associated with the default mode network (DMN), providing a neurobiological foundation for spontaneous thought generation \cite{raichle2001default}. More recent theoretical frameworks describe mind wandering as a dynamic interplay between spontaneous thought generation and executive control processes \cite{christoff2016mind}. While excessive mind wandering can negatively affect performance on ongoing tasks, it may also support cognitive functions such as creativity, prospective thinking, and autobiographical reflection \cite{shelat2026costs}.
+Electroencephalography (EEG) has become an effective approach for examining the neural mechanisms associated with mind wandering due to its high temporal resolution and sensitivity to rapid fluctuations in brain activity \cite{KAM2022119372}. Meditation, meanwhile, offers a valuable experimental context for examining attentional fluctuations because it directly engages sustained attention and meta-awareness processes \cite{lutz2008attention,tang2015neuroscience}. Previous neuroimaging and electrophysiological research has demonstrated that meditation can produce measurable alterations in brain structure, functional activity, and neural oscillations across different frequency bands \cite{fox2014meditation,cahn2013meditation,lee2018review}. Consequently, meditation-based paradigms provide a promising framework for examining the neural dynamics underlying transitions between focused attention and mind wandering. 
+Recent methodological developments have facilitated the direct examination of mind wandering during meditation through experience-sampling approaches. Notably, \cite{rodlarios} utilized a probe-caught EEG paradigm to compare breath-focused attention with mind wandering in novice meditators. Their results demonstrated differential changes in alpha and theta activity, including variations in oscillatory amplitude, peak frequency, and cross-frequency coupling, emphasizing the role of these neural rhythms in internally directed cognitive processing.
+Despite these developments, existing EEG investigations of mind wandering have predominantly relied on conventional spectral analysis and predefined frequency bands. Nevertheless, EEG signals exhibit complex nonlinear, nonstationary, and multiscale characteristics \cite{cohen2014analyzing}, highlighting the need for adaptive signal-processing techniques that can reveal underlying oscillatory dynamics . 
+The main contributions of this study are summarized as follows:
+
+\begin{itemize}
+    \item \textbf{Physiological biomarkers of mind wandering:} Consistent spectral signatures of mind wandering were identified across both EEG datasets. Delta power showed a robust positive shift during mind wandering ($\sim$+0.095 and $\sim$+0.099 $\log_{10}(\mathrm{V}^2/\mathrm{Hz})$ in Datasets~1 and~2, respectively), with divergent temporal trajectories between Focus and mind wandering. Theta power was elevated during mind wandering, with a significant effect in Dataset~2 ($+0.0488$, $p<0.001$), while Gamma power showed consistent suppression ($\sim$--0.032 and $\sim$--0.031). Beta power showed no statistically significant state-dependent difference in either dataset.
+    \item \textbf{Feature engineering and importance analysis:} The contribution of different EEG feature families was quantified, with spectral band-power features accounting for 50.4\% and 41.5\% of total feature importance in Datasets~1 and~2, respectively. Hjorth parameters showed high information density, whereas phase-based functional connectivity contributed less than 3.2\% despite forming the largest feature group, indicating substantial redundancy.
+    \item \textbf{Machine learning and preprocessing insights:} Conventional and nonlinear classifiers were compared. The non-linear Deep MLP consistently achieved the highest overall accuracy (0.85 in Dataset 2). However, standard linear classifiers (SVM and Logistic Regression) upgraded with the 35-feature extended set in Dataset 2 reach 0.75--0.76 accuracy, outperforming the tree-based ExtraTrees classifier (0.71) and demonstrating competitive performance on high-density layouts.
+    \item \textbf{Spatial dynamics of attention:} Scalp region contributions varied between datasets. For Dataset~1, Central--Temporal electrodes provided the strongest standalone spatial representation (Acc~$=0.617$), while Frontal electrodes alone were the weakest (Acc~$=0.567$). For Dataset~2, the extended feature set showed that Frontal electrodes alone provided the strongest single-region discrimination (Acc~$=0.763$), followed closely by Central--Temporal (Acc~$=0.751$), while Posterior electrodes alone were the weakest (Acc~$=0.709$), indicating a shift in dominant scalp topology between sparse and dense-array recordings.
+\end{itemize}
+\section{RELATED WORK}
+Mind wandering has become an important research area in cognitive neuroscience due to its close relationship with attention, memory, and executive control processes. The increasing use of electroencephalography has allowed researchers to examine the temporal characteristics of spontaneous thought with high temporal resolution. A comprehensive review by \cite{KAM2022119372} examined forty-two EEG studies and identified attenuated event-related responses and elevated low-frequency oscillatory activity, particularly within the theta and alpha bands, as the most consistent electrophysiological markers of mind wandering. The review also reported considerable variability in spectral findings across experimental paradigms, underscoring the necessity for more reliable and comprehensive analytical approaches.
+Meditation-based paradigms offer a suitable experimental framework for examining mind wandering, as they naturally involve transitions between externally focused attention and internally generated thoughts. Mindfulness training has been consistently associated with reductions in task-unrelated thoughts and alterations in default mode network activity \cite{smallwood2015science}. A systematic review by \cite{feruglio2021impact} synthesized findings from behavioral and neurophysiological investigations and reported that experienced meditators demonstrate fewer instances of mind wandering and improved attentional regulation compared with novice practitioners. Furthermore, neuroimaging research has indicated that different meditation practices engage distinct neural networks associated with attention, self-referential processing, and cognitive control \cite{fox2016functional,lutz2008attention,cahn2013meditation}.
+In this context, \cite{rodlarios} developed an experience-sampling EEG paradigm to directly compare breath-focused attention with mind wandering during meditation. Their results showed increased theta amplitude, reduced alpha amplitude, alterations in oscillatory peak frequencies, and stronger alpha-theta coupling during mind-wandering episodes. In a subsequent investigation, \cite{rodriguez2021eeg} compared novice meditators with experienced practitioners and identified significant differences in EEG spectral dynamics during meditation and spontaneous thought, suggesting that meditation expertise affects the neural processes associated with attentional fluctuations.
+Extending conventional spectral investigations, \cite{lu2022nonlinear} incorporated nonlinear EEG measures and observed reduced neural complexity during mind wandering compared with breath-focused attention. These findings indicate that conventional spectral characteristics may not fully represent the complex neural dynamics involved in internally directed cognition. Consistent findings have emerged from meditation research utilizing entropy, complexity, and connectivity measures, demonstrating that meditation can alter large-scale neural interactions across multiple frequency ranges \cite{berkovich2012mindfulness}. Recent reviews have further highlighted the increasing relevance of EEG-derived biomarkers for investigating the neural mechanisms underlying mindfulness and meditation.
+Alongside these neuroscientific investigations, substantial research has focused on the automated identification of mind wandering through machine-learning techniques. Initial studies largely utilized handcrafted spectral features derived from canonical EEG frequency bands together with traditional classifiers, including support vector machines, random forests, and multilayer perceptrons \cite{jin2020distinguishing,compton2019wandering}. Subsequently, deep-learning methods, particularly convolutional neural networks, have been investigated for performing end-to-end mind-wandering classification directly from EEG recordings \cite{hosseini2019deep}. Broader investigations of deep learning for EEG analysis have demonstrated increasing adoption of convolutional and recurrent architectures for decoding cognitive states, while also identifying challenges related to reproducibility and the interpretability of learned features.
+Despite these developments, most existing investigations continue to characterize EEG activity either directly in the time domain or using predefined frequency bands. Given the nonlinear and nonstationary nature of EEG signals, adaptive signal-processing methods are increasingly relevant for identifying latent oscillatory components.
+\section{Proposed Methodology}
+\subsection{Dataset}
+We employed two publicly available dataset provided by the authors of \cite{grandchamp2014oculometric,rodlarios}.  Dataset 1, from \cite{rodlarios}, acquired using the Nexus-32 recording system using a 22-electrode cap, comprising 19 scalp electrodes, two reference electrodes, and one ground electrode, positioned according to the international 10–20 system. EEG signals were amplified using a unipolar amplifier and sampled at 512 Hz. To monitor ocular activity, vertical electrooculogram (VEOG) and horizontal electrooculogram (HEOG) signals were recorded using pre-gelled foam electrodes placed above and below the left eye (VEOG) and at the outer canthi of both eyes (HEOG), with a sampling rate of 2048 Hz. 
+Similarly  in dataset 2 \cite{grandchamp2014oculometric}, breath counting was used to represent the non-mind or breath focus (BF) state. The dataset comprises recordings from two healthy participants (one male and one female), each of whom completed eleven experimental sessions designed to capture episodes of mind wandering.
+During the experiment, participants performed a reverse breath-counting task from 10 to 1 while fixating on a cross displayed on a computer screen. Whenever they became aware that their attention had shifted away from the task, they pressed a button to indicate the onset of a mind-wandering (MW) episode, completed a questionnaire describing the experience, and subsequently pressed another button to indicate refocusing before resuming the counting task. Each session lasted approximately 20 minutes.
+EEG signals were acquired using a 64-channel BIOSEMI recording system at a sampling frequency of 1024 Hz. The recorded signals were subsequently band-pass filtered between 0.5 and 40 Hz. Following preprocessing and artifact removal, a total of 977 EEG epochs were extracted, including 472 MW epochs and 505 breath-focused (BF) epochs.
+
+\subsection{Preprocessing}
+To ensure a consistent and comparable analysis, both EEG datasets underwent dataset-specific preprocessing before feature extraction and classification. For Dataset 1, the raw EEG recordings contained 21 channels, of which 19 were retained as EEG channels and two were treated as auxiliary channels. The recordings were converted from microvolts to volts, assigned a standard 10--20 montage, and band-pass filtered between 1 and 40 Hz using a FIR filter. Extremely low-variance channels were identified as bad channels and interpolated using spherical interpolation, followed by average referencing. Behavioral event markers were used to identify Focus and mind-wandering states, and EEG segments preceding each event were extracted. A 4.9-s segment ($-5$ to $-0.1$ s) was extracted for both conditions and edge-padded where required to obtain uniform 5-s epochs.
+For the artifact-cleaned Dataset 1, the same preprocessing and epoching procedure was retained. The simultaneously recorded two-channel EOG signals were independently band-pass filtered between 1 and 40 Hz, segmented using the corresponding event markers, and resampled to the EEG sampling rate. ICA was performed on the epoched EEG data using the FastICA algorithm. Independent components were correlated with the EOG channels using Pearson correlation, and components showing an absolute correlation greater than 0.3 with either EOG channel were identified as ocular-artifact components and removed before reconstructing the cleaned EEG epochs.
+Dataset 2 consisted of 64 EEG channels and eight auxiliary EXG channels. EEG and EXG channels were identified from the BIDS channel metadata, and the recordings were resampled to 256 Hz with corresponding adjustment of event markers to preserve temporal alignment. The recordings were then band-pass filtered between 0.5 and 45 Hz. Two matched signal conditions were generated from the same filtered recordings: Raw, containing the 64 EEG channels without ICA-based artifact removal, and ICA-Cleaned, in which ICA was applied to the EEG channels and components showing an absolute correlation of $\geq 0.30$ with the auxiliary EXG channels were removed.
+For Dataset 2, mind-wandering epochs were extracted from $-5$ to $-0.1$ s relative to the mind-wandering report, whereas Focus epochs were extracted from $+1$ to $+6$ s relative to the corresponding task event. All epochs were standardized to a common 5-s duration, with shorter segments edge-padded where required. Identical downstream feature extraction and classification procedures were then applied separately to the Raw and ICA-Cleaned conditions for both datasets, enabling direct assessment of the influence of artifact removal on mind-wandering classification performance.
+
+\subsection{Feature Extraction}
+Following preprocessing and epoching, 35 features were extracted independently from each EEG channel for both Raw and ICA-Cleaned conditions. The feature set comprised eight statistical/time-domain features (Mean, Variance, Standard Deviation, RMS, Kurtosis, Skewness, Peak-to-Peak, and Energy), three Hjorth parameters (Activity, Mobility, and Complexity), three entropy measures (Shannon Entropy, Differential Entropy, and Spectral Entropy), seven absolute band power spectral features (Total Power, Delta Power, Theta Power, Alpha Power, Beta Power, Gamma Power, and Dominant Frequency), five relative band power spectral features (Delta Rel, Theta Rel, Alpha Rel, Beta Rel, Gamma Rel), eight amplitude envelope metrics (Alpha envelope mean, variance, CV, and burst count; Theta envelope mean, variance, CV, and burst count), and one connectivity feature (cross-channel Alpha envelope synchrony).
+Spectral features were derived using Welch's PSD. Hjorth parameters were calculated from the signal and its first- and second-order differences.
+Features were extracted channel-wise for each 5-s epoch and concatenated into a single feature vector while retaining the cognitive-state label and subject/session information. This resulted in $35\times19=665$ features per epoch for Dataset 1 and $35\times64=2,240$ features per epoch for Dataset 2, thereby preserving channel-wise spatial information for subsequent classification.
+
+\begin{table}[htbp]
+\centering
+\caption{Notation used in the feature extraction, temporal analysis, and classification procedures.}
+\label{tab:notation}
+\begin{tabular}{ll}
+\hline
+\textbf{Symbol} & \textbf{Definition} \\
+\hline
+$\mathbf{X}$ & EEG epoch/signal matrix \\
+$C$ & Number of EEG channels \\
+$T$ & Number of temporal samples \\
+$L$ & Temporal-window length \\
+$S$ & Temporal-window step size \\
+$w$ & Temporal-window index \\
+$b$ & Frequency-band index \\
+$\mathcal{B}$ & Set of EEG frequency bands \\
+$P_{c,b}$ & Absolute band power \\
+$P^{rel}_{c,b}$ & Relative band power \\
+$A_{c,b}(t)$ & Band-specific amplitude envelope \\
+$CV_{c,b}$ & Coefficient of variation \\
+$R_{ij}^{\alpha}$ & Alpha-envelope correlation between channels $i$ and $j$ \\
+$S_i^{\alpha}$ & Mean alpha synchronization for channel $i$ \\
+$\mathbf{f}^{(w)}$ & Feature vector for window $w$ \\
+$D$ & Total feature dimensionality \\
+$N$ & Number of EEG windows/samples \\
+$M$ & Number of trees in the Extra Trees ensemble \\
+$I_j$ & Importance of feature $j$ \\
+$I_b^{total}$ & Aggregate importance of frequency band $b$ \\
+$W_e$ & Number of valid windows in epoch $e$ \\
+$\beta_{1,b,e}$ & Within-epoch temporal slope for band $b$ \\
+$\Delta_b$ & MW--Focus difference in mean logarithmic band power \\
+$\gamma_{1,b}$ & MW-related change in temporal slope \\
+$I_{\mathrm{MW}}$ & State indicator: 1 = MW, 0 = Focus \\
+$\mathbf{x}_i$ & Feature vector of sample $i$ \\
+$y_i$ & Ground-truth class label \\
+$K$ & Number of cross-validation folds \\
+$g_i$ & Group identifier for sample $i$ \\
+$\Delta M$ & ICA--Raw difference in classification metric $M$ \\
+$\mathbf{W}_l,\mathbf{b}_l$ & Weight matrix and bias of DeepMLP layer $l$ \\
+$p_l$ & Dropout probability of layer $l$ \\
+$z$ & DeepMLP output logit \\
+$\hat{p}$ & Predicted probability of the MW class \\
+$w_+$ & Positive-class weight \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Feature-wise Importance and Band-wise Analysis}
+
+To quantify the contribution of individual EEG characteristics to the discrimination between Focus and mind-wandering states, a feature-wise analysis based on an Extra Trees ensemble was performed separately for the raw and ICA-cleaned EEG conditions. Let the preprocessed EEG signal for an epoch be represented as
+\begin{equation}
+\mathbf{X} \in \mathbb{R}^{C \times T},
+\end{equation}
+where $C$ denotes the number of EEG channels and $T$ denotes the number of temporal samples. Each epoch was divided into overlapping temporal windows of length $L$ with a step size $S$. Thus, the $w$-th window is given by
+\begin{equation}
+\mathbf{X}^{(w)}
+=
+\mathbf{X}[:,(w-1)S:(w-1)S+L].
+\end{equation}
+
+For Dataset 1, $L=2$~s and $S=0.5$~s, resulting in six overlapping windows per 5-s epoch. For Dataset 2, $L=1.5$~s and $S=0.5$~s were used.
+
+For each window and channel, the signal was decomposed into five frequency bands:
+\begin{equation}
+\mathcal{B}=
+\{\delta,\theta,\alpha,\beta,\gamma\},
+\end{equation}
+with
+\begin{equation}
+\delta=[1,4)\,\mathrm{Hz},\quad
+\theta=[4,8)\,\mathrm{Hz},\quad
+\alpha=[8,12)\,\mathrm{Hz},
+\end{equation}
+\begin{equation}
+\beta=[13,30)\,\mathrm{Hz},\quad
+\gamma=[30,45]\,\mathrm{Hz}.
+\end{equation}
+
+For a channel signal $x_c(t)$, the band-limited signal was obtained using a fourth-order Butterworth band-pass filter:
+\begin{equation}
+x_{c,b}(t)=
+\mathcal{F}_{b}\{x_c(t)\},
+\end{equation}
+where $\mathcal{F}_{b}$ denotes the band-pass filtering operation corresponding to frequency band $b$.
+
+The power spectral density (PSD) of each window was estimated and the absolute band power was calculated as
+\begin{equation}
+P_{c,b} =
+\int_{f_{b,l}}^{f_{b,h}}
+PSD_c(f)\,df.
+\end{equation}
+
+The corresponding relative band power was defined as
+\begin{equation}
+P^{rel}_{c,b}
+=
+\frac{P_{c,b}}
+{\displaystyle\sum_{f=1}^{45}PSD_c(f)+\epsilon},
+\end{equation}
+where $\epsilon$ is a small positive constant introduced to avoid numerical instability.
+
+For the theta and alpha bands, the analytic signal was obtained using the Hilbert transform:
+\begin{equation}
+z_{c,b}(t)
+=
+x_{c,b}(t)+j\mathcal{H}\{x_{c,b}(t)\},
+\end{equation}
+and its amplitude envelope was calculated as
+\begin{equation}
+A_{c,b}(t)=|z_{c,b}(t)|.
+\end{equation}
+
+The mean envelope, variance, coefficient of variation, and burst count were subsequently calculated. The coefficient of variation was defined as
+\begin{equation}
+CV_{c,b}
+=
+\frac{\sigma(A_{c,b})}
+{\mu(A_{c,b})+\epsilon}.
+\end{equation}
+
+A burst was defined using a threshold of
+\begin{equation}
+\tau_{c,b}
+=
+\mu(A_{c,b})+2\sigma(A_{c,b}),
+\end{equation}
+and the burst count was obtained by counting upward threshold crossings.
+
+In addition to band-specific features, alpha-envelope synchronization between channels was calculated using the Pearson correlation coefficient. For channels $i$ and $j$,
+\begin{equation}
+R_{ij}^{\alpha}
+=
+\mathrm{corr}
+\left(A_{i,\alpha}(t),A_{j,\alpha}(t)\right).
+\end{equation}
+
+The synchronization associated with channel $i$ was obtained by averaging its correlation with all other channels:
+\begin{equation}
+S_i^{\alpha}
+=
+\frac{1}{C-1}
+\sum_{\substack{j=1\\j\neq i}}^{C}
+R_{ij}^{\alpha}.
+\end{equation}
+
+Consequently, each temporal window was represented by a high-dimensional feature vector
+\begin{equation}
+\mathbf{f}^{(w)}
+=
+[f_1,f_2,\ldots,f_D]^{T},
+\end{equation}
+The features from all EEG channels were concatenated while retaining their channel identity, producing the final input matrix as
+\begin{equation}
+\mathbf{F}\in\mathbb{R}^{N\times D},
+\end{equation}
+
+\subsubsection{Extra Trees Feature Importance}
+
+An Extra Trees classifier was employed to estimate the relative contribution of the extracted features. Let the ensemble contain $M$ decision trees:
+\begin{equation}
+\mathcal{E}=\{T_1,T_2,\ldots,T_M\}.
+\end{equation}
+
+For each feature $f_j$, the importance obtained from the ensemble is represented by
+\begin{equation}
+I_j
+=
+\frac{1}{M}
+\sum_{m=1}^{M}
+I_{j}^{(m)},
+\end{equation}
+where $I_j^{(m)}$ denotes the feature importance of feature $j$ in tree $m$. The importance values are normalized by the Extra Trees implementation such that
+\begin{equation}
+\sum_{j=1}^{D}I_j=1.
+\end{equation}
+
+For classification, the model was evaluated using stratified group-wise cross-validation. The grouping variable was the subject-session identifier, ensuring that samples originating from the same recording session were not simultaneously used for training and testing. The out-of-fold predictions were used to calculate Accuracy, Precision, Recall, F1-score, and ROC-AUC.
+
+For the descriptive feature-importance analysis, an Extra Trees model was subsequently fitted to the complete feature set. The resulting importance values were ranked to identify the most influential individual EEG features. This full-data importance model was used only to characterize feature contribution and was not used as an estimate of generalization performance.
+
+\subsubsection{Band-wise Feature Importance} To determine the relative contribution of different frequency ranges, individual feature importance values were aggregated according to their associated frequency band. Let $\mathcal{J}_b$ denote the set of features belonging to frequency band $b$. The total importance of band $b$ was calculated as \begin{equation} I_b^{total} = \sum_{j\in\mathcal{J}_b} I_j. \end{equation} The resulting band-wise importance satisfies \begin{equation} \sum_{b\in\mathcal{B}} I_b^{total} +I_{\mathrm{Other}} =1, \end{equation} where $I_{\mathrm{Other}}$ represents features that cannot be uniquely assigned to one of the predefined frequency bands. This analysis provides two complementary levels of interpretation: the individual feature importance $I_j$ identifies the specific EEG characteristics that contribute most strongly to Focus versus mind-wandering discrimination, whereas $I_b^{total}$ quantifies the aggregate contribution of each frequency band. The analysis was performed independently for the raw and ICA-cleaned conditions, enabling examination of whether artifact removal altered the relative importance of spectral and temporal EEG characteristics. \subsection{Band-wise Temporal Analysis} To investigate the spectral characteristics associated with Focus and mind-wandering states, a band-wise temporal analysis was performed on the ICA-cleaned EEG recordings. Let the EEG signal corresponding to an epoch be represented as \begin{equation} \mathbf{X}\in\mathbb{R}^{C\times T}. \end{equation} Each 5-s epoch was divided into overlapping temporal windows of length $L=1$~s with a step size of $S=0.5$~s. For each window, the power spectral density (PSD) was estimated using Welch's method. The analysis considered five conventional EEG frequency bands: \begin{equation} \mathcal{B}= \{\delta,\theta,\alpha,\beta,\gamma\}, \end{equation} with frequency ranges as per equation (5). For a given window $w$, channel $c$, and frequency band $b$, the band power was calculated from the estimated PSD as \begin{equation} P_{c,b}^{(w)} = \int_{f_{b,l}}^{f_{b,h}} PSD_c^{(w)}(f)\,df. \end{equation} The logarithmic representation of band power was then obtained as \begin{equation} L_{c,b}^{(w)} = \log_{10}\left(P_{c,b}^{(w)}+\epsilon\right), \end{equation} where $\epsilon$ is a small positive constant used to avoid numerical instability. For each temporal window, the channel-wise band powers were averaged across the available EEG channels to obtain a representative band-power measure: \begin{equation} L_b^{(w)} = \frac{1}{C} \sum_{c=1}^{C} L_{c,b}^{(w)}. \end{equation} This resulted in a temporal trajectory of logarithmic band power for each EEG frequency band. To obtain an epoch-level representation, the mean band power across all valid windows within an epoch was calculated as \begin{equation} \overline{L}_{b,e} = \frac{1}{W_e} \sum_{w=1}^{W_e} L_{b,e}^{(w)}, \end{equation} where $W_e$ denotes the number of valid windows in epoch $e$. In addition to the mean power, the temporal evolution of each frequency band was quantified by fitting a first-order linear model to the window-level power: \begin{equation} L_{b,e}^{(w)} = \beta_{0,b,e} + \beta_{1,b,e}t_w + \varepsilon_{b,e}^{(w)}, \end{equation} where $t_w$ represents the center time of window $w$ and $\beta_{1,b,e}$ represents the within-epoch rate of change in band power. Thus, a positive $\beta_{1,b,e}$ indicates an increase in band power over the epoch, whereas a negative value indicates a decrease. The difference in mean band power between mind-wandering and Focus states was evaluated using an ordinary least-squares model: \begin{equation} \overline{L}_{b,e} = \beta_{0,b} + \beta_{1,b}I_{\mathrm{MW},e} + \varepsilon_e, \end{equation} where $I_{\mathrm{MW}}=1$ for mind-wandering epochs and $I_{\mathrm{MW}}=0$ for Focus epochs. Consequently, $\beta_{1,b}$ represents the estimated difference in mean logarithmic band power between mind-wandering and Focus states: \begin{equation} \Delta_b = \overline{L}_{b,\mathrm{MW}} - \overline{L}_{b,\mathrm{Focus}}. \end{equation} To characterize state-specific temporal changes, a second regression model was fitted to the epoch-level slopes: \begin{equation} \beta_{1,b,e} = \gamma_{0,b} + \gamma_{1,b}I_{\mathrm{MW},e} + \eta_e. \end{equation} Here, $\gamma_{0,b}$ represents the temporal change in band power during Focus, whereas $\gamma_{0,b}+\gamma_{1,b}$ represents the corresponding temporal change during mind wandering. Statistical inference was performed using subject-clustered standard errors to account for the repeated observations obtained from the same individual. The resulting estimates were reported together with their standard errors, 95\% confidence intervals, and two-sided $p$-values. Statistical significance was assessed at $\alpha=0.05$.
+\subsection{Raw versus ICA-Cleaned Classification}
+To quantify the influence of artifact removal on the discrimination of Focus and mind-wandering states, classification was performed independently on Raw and ICA-Cleaned EEG using the same recordings, feature-extraction procedure, and classification framework.
+The feature representation of each EEG epoch was given by
+\begin{equation}
+\mathbf{x}_i \in \mathbb{R}^{D},
+\end{equation}
+with separate feature matrices for the two conditions:
+\begin{equation}
+\mathbf{X}^{(R)},\mathbf{X}^{(C)}
+\in\mathbb{R}^{N\times D}.
+\end{equation}
+Missing feature values were replaced using median imputation, followed by feature standardization within the classification pipeline:
+\begin{equation}
+z_{ij}
+=
+\frac{x_{ij}-\mu_j}{\sigma_j}.
+\end{equation}
+Both operations were fitted only on the corresponding training data within each fold to prevent information leakage.
+
+\section{Model Training}
+
+Two conventional supervised classifiers were evaluated: a nonlinear Support Vector Machine (SVM) with a radial basis function (RBF) kernel and Logistic Regression (LR). The SVM kernel was defined as
+\begin{equation}
+K(\mathbf{x}_i,\mathbf{x}_j)
+=
+\exp\left(-\gamma
+\|\mathbf{x}_i-\mathbf{x}_j\|^2\right),
+\end{equation}
+with $C=1$, $\gamma=\mathrm{scale}$, and balanced class weighting. For Logistic Regression, the probability of the mind-wandering class was modeled as
+\begin{equation}
+P(y_i=1|\mathbf{x}_i)
+=
+\frac{1}
+{1+\exp(-(\mathbf{w}^{T}\mathbf{x}_i+b))},
+\end{equation}
+with balanced class weighting.
+
+To prevent information leakage from repeated observations, stratified group K-fold cross-validation with shuffling and a fixed random seed was employed, ensuring that samples from the same group were not distributed across training and testing folds:
+\begin{equation}
+g_i\in\mathcal{G}_k
+\quad\Rightarrow\quad
+i\notin\mathcal{T}_l,\qquad l\neq k.
+\end{equation}
+
+For each fold, the classifier was trained on the training subset and evaluated on the held-out subset:
+\begin{equation}
+f^{(k)}:
+\mathbf{X}_{train}^{(k)}
+\rightarrow
+y_{train}^{(k)},
+\end{equation}
+\begin{equation}
+\hat{y}_{test}^{(k)}
+=
+f^{(k)}
+\left(\mathbf{X}_{test}^{(k)}\right).
+\end{equation}
+The held-out predictions were combined to obtain out-of-fold predictions, ensuring that each sample was evaluated by a model that had not been trained on it.
+
+For ROC-AUC, continuous decision scores were retained rather than binary predictions. The SVM used its signed decision function, while class-probability or decision scores were used where available. Performance was evaluated independently for the Raw and ICA-Cleaned conditions, and the difference was calculated as
+\begin{equation}
+\Delta M
+=
+M_{\mathrm{ICA}}
+-
+M_{\mathrm{Raw}},
+\end{equation}
+where $M$ denotes Accuracy, Precision, Recall, F1-score, or ROC-AUC.
+
+\subsubsection{Deep Multilayer Perceptron}
+
+A Deep Multilayer Perceptron (DeepMLP) was employed to evaluate the nonlinear discriminative capability of the extracted high-dimensional EEG features. The model was evaluated independently for the Raw and ICA-Cleaned conditions using the same epoch-level evaluation framework.
+
+The DeepMLP consisted of fully connected layers with batch normalization, GELU activation, and dropout:
+\begin{equation}
+\mathbf{h}_{l}
+=
+\mathcal{D}_{p_l}
+\left[
+\operatorname{GELU}
+\left(
+\operatorname{BN}
+\left(
+\mathbf{W}_{l}\mathbf{h}_{l-1}
++
+\mathbf{b}_{l}
+\right)
+\right)
+\right].
+\end{equation}
+
+For Dataset 2, the architecture was
+\begin{equation}
+D
+\rightarrow
+1024
+\rightarrow
+512
+\rightarrow
+256
+\rightarrow
+128
+\rightarrow
+1,
+\end{equation}
+with dropout probabilities of $0.50$, $0.40$, $0.30$, and $0.20$ after the respective hidden layers.
+
+The output logit and predicted probability were calculated as
+\begin{equation}
+z =
+\mathbf{W}_{o}\mathbf{h}_{L}+b_o,
+\end{equation}
+\begin{equation}
+\hat{p}
+=
+\sigma(z)
+=
+\frac{1}{1+\exp(-z)}.
+\end{equation}
+
+The network was trained using weighted binary cross-entropy loss with logits:
+\begin{equation}
+\mathcal{L}
+=
+-\frac{1}{N}
+\sum_{i=1}^{N}
+\left[
+w_{+}y_i\log(\hat{p}_i)
++
+(1-y_i)\log(1-\hat{p}_i)
+\right],
+\end{equation}
+where the positive-class weight was calculated from the training-fold class distribution to compensate for class imbalance.
+
+The model was optimized using AdamW with a learning rate of $10^{-3}$ and weight decay of $10^{-4}$. A ReduceLROnPlateau scheduler was used, with early stopping at a patience of 25 epochs. The model corresponding to the lowest evaluation loss was retained, with a maximum of 150 epochs and a batch size of 64. Classification performance was evaluated using Accuracy, Precision, Recall, F1-score, and ROC-AUC.
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{cmes-Page-4 (1).png}
+    \caption{to be decided}
+    \label{fig:my_figure}
+\end{figure}
+
+\section {Results and Discussion}
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=1\textwidth]{cmes-Page-1.png}
+    \caption{bAND WISE tEMP aNALYSIS}
+    \label{fig:my_figure}
+\end{figure*}
+
+The band-wise analysis revealed several consistent spectral patterns across the two EEG datasets. Theta power showed a positive shift during mind-wandering relative to focused states in both datasets, with a stronger and statistically significant effect in Dataset~2 ($\hat{\beta}=0.0488$, $p<0.001$), while Dataset~1 exhibited a weaker positive trend ($\hat{\beta}=0.0816$, $p=0.1775$). Delta power also showed remarkably similar positive mean differences between mind-wandering and Focus across Dataset~1 and Dataset~2 ($\hat{\beta}=0.0948$ and $0.0992$, respectively).
+
+Furthermore, the temporal trajectories of Delta power exhibited divergent directions for the two cognitive states: decreasing over time during Focus (slope $= -0.0022$, $p=0.5505$ in Dataset~1; slope $= -0.0076$, $p < 0.001$ in Dataset~2) and increasing over time during mind-wandering (slope $= +0.0053$, $p=0.3118$ in Dataset~1; slope $= +0.0177$, $p < 0.001$ in Dataset~2). This divergence was statistically significant in the high-density Dataset~2, suggesting that Delta power actively diverges between the two states at a within-epoch timescale. In addition, Gamma power exhibited consistent suppression during mind-wandering in both datasets (effect estimates of $-0.0322$ and $-0.0305$, respectively), coupled with a consistent downward trend over time during sustained Focus across both datasets (slope $= -0.0007$, $p=0.6764$ in Dataset~1; slope $= -0.0111$, $p=0.0938$ in Dataset~2). Although these Gamma Focus-slope effects did not reach statistical significance, their direction was consistent, suggesting a gradual reduction in high-frequency neural activity during sustained attention. Overall, these convergent patterns suggest that low-frequency dynamics and Gamma suppression provide common spectral signatures of transitions between externally focused and internally oriented cognitive states.
+
+Across both datasets, the Deep MLP consistently achieved the highest classification performance. In Dataset~1, advanced classifiers (Deep MLP and Extra Trees) outperformed standard linear baselines. However, in Dataset~2, standard linear classifiers (SVM and Logistic Regression) upgraded with the full 35-feature extended set reached 0.75--0.76 accuracy, outperforming the tree-based Extra Trees classifier (0.71) and demonstrating competitive performance on high-density layouts. Feature-family analysis further revealed a consistent dominance of band-power features, accounting for 50.4\% and 41.5\% of the total importance in Dataset~1 and Dataset~2, respectively. In contrast, phase-based functional connectivity contributed only 2.4\% and 3.2\% despite comprising 361 and 4,096 features, respectively, suggesting substantial redundancy in long-range phase synchronization features. Hjorth parameters also exhibited high information density, with an average importance of 0.71\% per feature in Dataset~1 (27.12\% total across 38 features) and 0.055\% per feature in Dataset~2 (7.03\% total across 128 features), underscoring the relevance of localized signal complexity for state discrimination.
+
+Interestingly, Beta-band power exhibited a consistent negative but non-significant difference between mind-wandering and focused states in both datasets ($\hat{\beta}=-0.0494$, $p=0.4445$ for Dataset~1; $\hat{\beta}=-0.0094$, $p=0.5852$ for Dataset~2). This consistency suggests that Beta power alone is not a reliable standalone marker of state transitions across the two experimental settings.
+
+The ablation analysis revealed that the contribution of feature domains and spatial regions varied across datasets. In Dataset~1, omitting Theta features yielded the best frequency-band omission result (Acc~$=0.597$), while isolating Theta alone was the best band-isolation variant (Acc~$=0.595$), confirming Theta's central role. In Dataset~2, Alpha emerged as the dominant frequency band: omitting Alpha substantially reduced SVM performance from the band baseline of 0.653 down to 0.593, while isolating Alpha alone partially recovered discrimination (Acc~$=0.640$). For spatial regions, under the extended feature set, standalone results showed that Frontal electrodes alone provided the strongest single-region discrimination in Dataset~2 (Acc~$=0.763$), followed closely by Central--Temporal (Acc~$=0.751$), while Posterior electrodes alone were weakest (Acc~$=0.709$). In Dataset~1, Central--Temporal electrodes provided the strongest standalone spatial representation (Acc~$=0.617$), while Frontal electrodes alone were the weakest region (Acc~$=0.567$). These findings indicate that spectral and spatial information contribute differently depending on the EEG montage and experimental setting.
+
+% ============================================================
+% TABLE 1: RAW VS ICA-CLEANED
+% ============================================================
+%\begin{table}[t]
+%\centering
+%\caption{Performance comparison between raw and ICA-cleaned EEG signals for the Deep MLP on Dataset 1 and Dataset 2.}
+%\label{tab:raw_ica_comparison}
+%\resizebox{\linewidth}{!}{%
+%\begin{tabular}{llccccc}
+%\toprule
+%Dataset & Condition & %Accuracy & Precision & %Recall & F1 & ROC-AUC \\
+%\midrule
+%\multirow{2}{*}{Dataset %1}
+%& Raw         & 67.10 & %62.27 & 61.84 & 62.05 & %71.57 \\
+%& ICA-cleaned & %\textbf{67.40} & %\textbf{63.46} & 59.08 & %61.19 & \textbf{71.44} \\
+%\midrule
+%\multirow{2}{*}{Dataset %2}
+%& Raw         & %\textbf{85.39} & %\textbf{84.90} & %\textbf{82.20} & %\textbf{83.53} & %\textbf{93.71} \\
+%& ICA-cleaned & 83.29 & 83.07 & 79.03 & 81.00 & 91.24 \\
+%\bottomrule
+%\end{tabular}%
+%}
+%\end{table}
+
+% ============================================================
+% TABLE 2: CLASSIFICATION PERFORMANCE
+% ============================================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{cmes-Page-2 (6).png}
+    \caption{to be decided}
+    \label{fig:my_figure}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%
+%\begin{figure*}[htbp]
+   % \centering
+   % \includegraphics[width=1\textwidth]{cmes-Page-3.png}
+   % \caption{to be decided}
+  %  \label{fig:my_figure}
+%\end{figure*}
+%%%%%%%%%%%%%%%%%%%%
+\begin{table}[t]
+\centering
+\caption{Classification performance of SVM, Logistic Regression, and Deep MLP on Dataset 1 and Dataset 2. Results are reported for raw and ICA-cleaned EEG.}
+\label{tab:classification_comparison}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lllccccc}
+\toprule
+Dataset & Condition & Model & Accuracy & Precision & Recall & F1 & ROC-AUC \\
+\midrule
+\multirow{6}{*}{Dataset 1}
+& \multirow{3}{*}{Raw}
+& SVM & 60.90 & 55.29 & 52.87 & 54.05 & 64.49 \\
+&& Logistic Regression & 57.10 & 50.69 & 50.80 & 50.75 & 57.37 \\
+&& Deep MLP & 67.10 & 62.27 & 61.84 & 62.05 & 71.57 \\
+\cline{2-8}
+& \multirow{3}{*}{ICA-cleaned}
+& SVM & 61.80 & 56.26 & 54.71 & 55.48 & 64.75 \\
+&& Logistic Regression & 56.10 & 49.57 & 53.10 & 51.28 & 58.41 \\
+&& Deep MLP & 67.40 & 63.46 & 59.08 & 61.19 & 71.44 \\
+\midrule
+\multirow{6}{*}{Dataset 2}
+& \multirow{3}{*}{Raw}
+& SVM & 74.69 & 70.50 & 75.42 & 72.88 & 81.52 \\
+&& Logistic Regression & 74.59 & 72.39 & 70.55 & 71.46 & 78.81 \\
+&& Deep MLP & 85.39 & 84.90 & 82.20 & 83.53 & 93.71 \\
+\cline{2-8}
+& \multirow{3}{*}{ICA-cleaned}
+& SVM & 67.81 & 60.83 & 80.30 & 69.22 & 74.52 \\
+&& Logistic Regression & 75.84 & 76.26 & 67.37 & 71.54 & 82.71 \\
+&& Deep MLP & 83.29 & 83.07 & 79.03 & 81.00 & 91.24 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+% ============================================================
+% TABLE 3: ABLATION STUDY
+% ============================================================
+\begin{table}[t]
+\centering
+\caption{Compact ablation analysis using SVM on raw EEG. The baseline is compared with the most informative and least informative variants within each ablation category.}
+\label{tab:ablation_comparison}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llrrr|rrr}
+\toprule
+& & \multicolumn{3}{c|}{Dataset 1} & \multicolumn{3}{c}{Dataset 2} \\
+Category & Variant & Acc. & F1 & AUC & Acc. & F1 & AUC \\
+\midrule
+Baseline
+& Full feature set
+& 60.90 & 54.05 & 64.49
+& 74.69 & 72.88 & 81.52 \\
+\midrule
+\multirow{2}{*}{Feature family}
+& Best omission (Omit Entropy)
+& 62.10 & 55.46 & 64.70
+& 74.31 & 72.47 & 81.31 \\
+& Most damaging omission (Omit Hjorth / Omit Spectral)
+& 60.30 & 53.35 & 64.25
+& 71.25 & 69.50 & 76.44 \\
+\midrule
+\multirow{2}{*}{Feature family}
+& Best isolated (Only Spectral / Only Time-Domain)
+& 60.90 & 53.29 & 63.90
+& 71.63 & 68.50 & 75.35 \\
+& Most damaging isolated (Only Entropy / Only Hjorth)
+& 57.50 & 54.93 & 60.97
+& 53.87 & 42.98 & 59.08 \\
+\midrule
+\multirow{2}{*}{Scalp region}
+& Best omission (Omit Frontal / Omit Posterior)
+& 61.10 & 53.64 & 65.19
+& 75.17 & 73.68 & 80.61 \\
+& Most damaging omission (Omit Central/Temporal / Omit Frontal)
+& 58.70 & 52.14 & 60.71
+& 74.12 & 71.44 & 82.12 \\
+\midrule
+\multirow{2}{*}{Scalp region}
+& Best isolated (Only Central/Temporal / Only Frontal)
+& 61.70 & 55.31 & 66.17
+& 76.31 & 74.38 & 79.80 \\
+& Most damaging isolated (Only Frontal / Only Posterior)
+& 56.70 & 51.73 & 59.94
+& 70.87 & 67.17 & 77.54 \\
+\midrule
+\multirow{2}{*}{Frequency band}
+& Best omission (Omit Theta / Omit Gamma)
+& 59.72 & 54.58 & 62.54
+& 65.94 & 59.06 & 68.96 \\
+& Most damaging omission (Omit Gamma / Omit Alpha)
+& 58.32 & 52.35 & 61.25
+& 59.32 & 55.94 & 62.30 \\
+\midrule
+\multirow{2}{*}{Frequency band}
+& Best isolated (Only Theta / Only Alpha)
+& 59.48 & 51.97 & 60.24
+& 63.97 & 54.32 & 66.03 \\
+& Most damaging isolated (Only Alpha / Only Beta)
+& 54.57 & 52.46 & 56.91
+& 53.85 & 44.81 & 55.24 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+% ============================================================
+% TABLE 4: STATISTICAL ANALYSIS
+% ============================================================
+\begin{table*}[t]
+\centering
+\caption{Statistical comparison of static frequency-band power (MW minus Focus mean power) and within-epoch temporal trajectories (Focus and MW slopes over time) across datasets. Significant results ($p < 0.05$) are highlighted in bold.}
+\label{tab:statistical_comparison}
+\begin{tabular}{llccc|ccc}
+\toprule
+& & \multicolumn{3}{c|}{Dataset 1 (19 Channels)} & \multicolumn{3}{c}{Dataset 2 (64 Channels)} \\
+Band & Analysis Metric & Estimate & $p$-value & Decision & Estimate & $p$-value & Decision \\
+\midrule
+\multirow{3}{*}{Delta}
+& MW minus Focus Mean & 0.0948 & 0.0901 & NS & 0.0992 & 0.1271 & NS \\
+& Focus Temporal Slope & -0.0022 & 0.5505 & NS & -0.0076 & \textbf{$<$0.0001} & Significant \\
+& MW Temporal Slope & 0.0053 & 0.3118 & NS & 0.0177 & \textbf{$<$0.0001} & Significant \\
+\midrule
+\multirow{3}{*}{Theta}
+& MW minus Focus Mean & 0.0816 & 0.1775 & NS & 0.0488 & \textbf{$<$0.0001} & Significant \\
+& Focus Temporal Slope & -0.0023 & 0.4675 & NS & -0.0050 & 0.4196 & NS \\
+& MW Temporal Slope & 0.0054 & 0.2418 & NS & -0.0035 & 0.3577 & NS \\
+\midrule
+\multirow{3}{*}{Alpha}
+& MW minus Focus Mean & -0.1113 & 0.1983 & NS & 0.1468 & \textbf{0.0110} & Significant \\
+& Focus Temporal Slope & -0.0032 & 0.4407 & NS & -0.0101 & 0.2193 & NS \\
+& MW Temporal Slope & 0.0059 & 0.4456 & NS & -0.0008 & 0.9257 & NS \\
+\midrule
+\multirow{3}{*}{Beta}
+& MW minus Focus Mean & -0.0494 & 0.4445 & NS & -0.0094 & 0.5852 & NS \\
+& Focus Temporal Slope & -0.0000 & 0.9972 & NS & -0.0248 & \textbf{$<$0.0001} & Significant \\
+& MW Temporal Slope & -0.0037 & 0.3016 & NS & 0.0079 & 0.0799 & NS \\
+\midrule
+\multirow{3}{*}{Gamma}
+& MW minus Focus Mean & -0.0322 & 0.6639 & NS & -0.0305 & 0.0733 & NS \\
+& Focus Temporal Slope & -0.0007 & 0.6764 & NS & -0.0111 & 0.0938 & NS \\
+& MW Temporal Slope & 0.0008 & 0.6609 & NS & -0.0004 & 0.9057 & NS \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+% ============================================================
+% TABLE 5: BAND-WISE FEATURE IMPORTANCE
+% ============================================================
+\begin{table}[b]
+\centering
+\caption{Relative feature importance contributed by individual frequency bands.}
+\label{tab:bandwise_importance}
+\begin{tabular}{lcc}
+\toprule
+Frequency Band & Dataset 1 (\%) & Dataset 2 (\%) \\
+\midrule
+Delta & 11.54 & 8.15 \\
+Theta & \textbf{32.47} & 27.06 \\
+Alpha & \textbf{32.67} & \textbf{42.08} \\
+Beta  & 11.24 & 11.88 \\
+Gamma & 12.07 & 10.84 \\
+\midrule
+Total & 100.00 & 100.00 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+% TABLE 6: UMBRELLA FEATURE IMPORTANCE
+% ============================================================
+\begin{table}[b]
+\centering
+\caption{Feature-family contribution based on aggregated feature importance for Dataset 1 and Dataset 2.}
+\label{tab:umbrella_importance}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrr|rr}
+\toprule
+& \multicolumn{2}{c|}{Dataset 1} & \multicolumn{2}{c}{Dataset 2} \\
+Feature Family & No. Features & Importance (\%) & No. Features & Importance (\%) \\
+\midrule
+Band-power features
+& 190 & \textbf{50.42}
+& 640 & \textbf{41.50} \\
+
+Hjorth features
+& 38 & 27.12
+& 128 & 7.03 \\
+
+Time-domain statistics
+& 133 & 0.30
+& 448 & 22.99 \\
+
+Oscillatory-envelope dynamics
+& 152 & 3.28
+& 512 & 21.26 \\
+
+Entropy and complexity
+& 57 & 8.15
+& 192 & 4.03 \\
+
+Functional connectivity / synchrony
+& 361 & 2.39
+& 4096 & 3.19 \\
+
+Spectral summary features
+& 38 & 8.35
+& 128 & 0.00 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+
+\section{Conclusion}
+
+This study investigated the neural signatures of mind wandering using EEG data from two complementary datasets with different recording densities and experimental settings. The results demonstrated several consistent physiological patterns across datasets, including elevated Theta and Delta activity during mind wandering and a suppression of Gamma power, while Beta power did not emerge as a significant standalone marker. The temporal analysis further revealed divergent Delta trajectories, with power decreasing during sustained focus but increasing during mind wandering, suggesting progressive changes in vigilance and internally directed processing.
+
+The machine learning and feature analyses further showed that nonlinear models, particularly the Deep MLP, provided stronger discrimination than conventional linear classifiers, highlighting the importance of complex interactions among EEG features. Band-power features constituted the dominant feature family in both datasets, while Hjorth parameters showed high information density (0.71\% per feature in Dataset~1, 0.055\% per feature in Dataset~2) and phase-based functional connectivity contributed comparatively little despite its large feature dimensionality. The ablation analysis additionally revealed dataset-dependent spatial and spectral contributions: Theta played a prominent role in Dataset~1 and Alpha emerged as the key driver in Dataset~2; spatially, Central--Temporal electrodes were strongest in Dataset~1, while Frontal electrodes provided the strongest standalone discrimination in Dataset~2 (0.763), followed by Central--Temporal (0.751), with Posterior being the weakest region (0.709). Overall, the findings demonstrate that mind wandering is characterized by reproducible low-frequency spectral dynamics and nonlinear spatial--spectral interactions, while also revealing important differences associated with EEG montage and experimental context. These results support the use of adaptive multiscale EEG analysis and nonlinear machine learning for more robust characterization of transitions between focused attention and internally directed cognitive states.
+\section*{Acknowledgment}
+This research was supported by the Anusandhan National Research Foundation (ANRF), Department of Science and Technology, Government of India, under grant number ANRF/ECRG/2024/004043/ENS.
+\vspace{-2mm}
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+\end{document}
