@@ -7,7 +7,7 @@ This repository documents two parallel EEG analysis workflows for mind-wandering
 * `dataset 1 analysis/` contains analyses conducted with Dataset 1, a 19-channel EEG dataset.
 * `dataset 2 analysis/` contains analyses conducted with Dataset 2, a 64-channel Breath Counting EEG dataset.
 
-Both workflows model Focus and mind-wandering (MW) states. They analyse spectral power in Delta (1–4 Hz), Theta (4–8 Hz), Alpha (8–12 Hz), Beta (13–30 Hz), and Gamma (30–45 Hz), and compare raw with ICA-cleaned EEG where relevant. This README documents procedures and file roles only. It does not interpret findings.
+Both workflows model Focus and mind-wandering (MW) states. They analyse spectral power in Delta (1–4 Hz), Theta (4–8 Hz), Alpha (8–12 Hz), Beta (12–30 Hz), and Gamma (30–45 Hz), and compare raw with ICA-cleaned EEG where relevant. Across both workflows, preprocessing is standardized with a uniform sampling rate of 256 Hz (Dataset 1 resampled from 512 Hz to 256 Hz; Dataset 2 at 256 Hz) and a uniform bandpass filter of 0.5–45 Hz. This README documents procedures and file roles only. It does not interpret findings.
 
 ## Contents
 
@@ -35,7 +35,7 @@ Dataset 1 is a 19-channel EEG dataset. The original dataset files and bundled MA
 | Notebook | Procedure |
 | --- | --- |
 | `dataset_1_band_wise_analysis/dataset_1_band_wise_analysis.ipynb` | Loads labelled ICA-cleaned epochs, calculates Welch power spectra in overlapping windows, creates band-specific log-power and epoch-summary tables, fits participant-clustered state/trend models, and creates band-trajectory figures. |
-| `dataset_1_raw_vs_cleaned_SVM_Logistic/dataset_1_raw_vs_cleaned_SVM_Logistic.ipynb` | Extracts spectral, envelope, burst, and phase-locking features from matched raw and ICA-cleaned epochs. It applies epoch-grouped validation, trains SVM and logistic-regression classifiers, and prepares metric and confusion-matrix artefacts. |
+| `dataset_1_raw_vs_cleaned_SVM_Logistic/dataset_1_raw_vs_cleaned_SVM_Logistic.ipynb` | Extracts spectral, envelope, burst, and phase-locking features from matched raw and ICA-cleaned epochs (resampled to 256 Hz, bandpass filtered 0.5–45 Hz). It applies 5-fold stratified cross-validation on pooled epoch data, trains SVM and logistic-regression classifiers, and prepares metric and confusion-matrix artefacts. |
 | `dataset_1_extratrees_and_band_importance/dataset_1_extratrees_and_band_importance.ipynb` | Extracts matched window features, applies group-preserving ExtraTrees classification, calculates feature importance for each preprocessing branch, aggregates importance by frequency band, and creates summary artefacts. |
 | `dataset_1_feature_wise_analysis/dataset_1_feature_wise_analysis.ipynb` | Computes spectral, envelope, synchrony, time-domain, Hjorth, entropy, and complexity features. It uses grouped feature selection and ExtraTrees modelling and produces feature- and family-level importance inventories. |
 | `dataset1_deep_mlp/dataset1_deep_mlp.ipynb` | Forms window-level feature vectors for raw and ICA-cleaned data, performs foldwise standardisation, trains a multilayer perceptron, aggregates predictions to epochs, and creates classification artefacts. |
@@ -57,7 +57,7 @@ Dataset 2 is a 64-channel Breath Counting EEG dataset. Its BIDS-style recordings
 | Notebook | Procedure |
 | --- | --- |
 | `dataset_2_band_wise_analysis/dataset_2_band_wise_analysis.ipynb` | Selects EEG channels, aligns trigger events after resampling, filters recordings, performs EXG-correlated ICA cleaning, derives Focus/MW epochs, calculates Welch band power in overlapping windows, fits clustered models, and writes tables and figures. |
-| `dataset_2_raw_vs_cleaned_SVM_Logistic/dataset_2_raw_vs_cleaned_SVM_Logistic.ipynb` | Creates matched raw and ICA-cleaned processing branches, extracts window features, applies grouped validation, fits SVM and logistic-regression classifiers, aggregates epoch predictions, and exports diagnostic artefacts. |
+| `dataset_2_raw_vs_cleaned_SVM_Logistic/dataset_2_raw_vs_cleaned_SVM_Logistic.ipynb` | Creates matched raw and ICA-cleaned processing branches (resampled to 256 Hz, bandpass filtered 0.5–45 Hz), extracts window features, applies 5-fold stratified cross-validation on pooled epoch data, fits SVM and logistic-regression classifiers, aggregates epoch predictions, and exports diagnostic artefacts. |
 | `dataset_2_extratrees_and_band_importance/dataset_2_extratrees_and_band_importance.ipynb` | Produces raw and cleaned feature matrices, applies grouped ExtraTrees classification and band-level importance aggregation, and saves feature/importance tables and figures. |
 | `dataset_2_feature_wise_analysis/dataset_2_feature_wise_analysis.ipynb` | Extracts spectral, temporal, entropy/complexity, envelope, and connectivity feature families. It applies grouped feature selection and ExtraTrees modelling and exports feature and family inventories. |
 | `dataset2_deepmlp/dataset2_deepmlp.ipynb` | Builds BDF-derived window vectors for raw and ICA-cleaned branches, trains a multilayer perceptron with foldwise imputation/scaling and early stopping, and aggregates window probabilities to epochs. |
